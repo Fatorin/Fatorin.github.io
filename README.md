@@ -14,7 +14,9 @@ Available in English, 正體中文 and 日本語 via the switcher in the nav.
 | --- | --- |
 | `index.html` | the entire site |
 | `404.html` | not-found page, same styling |
-| `favicon.svg` | tab icon |
+| `icon.png` | avatar, 800×800 — also the Open Graph preview image |
+| `favicon-32.png`, `favicon-180.png` | tab icons, cropped to the face so it reads small |
+| `apple-touch-icon.png` | home-screen icon, full illustration |
 | `.nojekyll` | tells GitHub Pages to serve the files as-is, skipping Jekyll |
 | `robots.txt`, `sitemap.xml` | crawler hints |
 
