@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hsu, Chen Lin (Rin) — Backend Engineer</title>
+<meta name="description" content="Backend engineer in Taipei, working in and around games. Game servers, cloud infrastructure, high-concurrency systems. Apache OpenDAL Committer.">
+<link rel="canonical" href="https://fatorin.github.io/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#2F6F6A">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fatorin.github.io/">
+<meta property="og:title" content="Hsu, Chen Lin (Rin) — Backend Engineer">
+<meta property="og:description" content="Backend engineer in Taipei, working in and around games. Game servers, cloud infrastructure, high-concurrency systems. Apache OpenDAL Committer.">
+<meta property="og:locale" content="en">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hsu, Chen Lin (Rin) — Backend Engineer">
+<meta name="twitter:description" content="Backend engineer in Taipei, working in and around games. Game servers, cloud infrastructure, high-concurrency systems. Apache OpenDAL Committer.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F5F7F6;
+  --panel: #FDFEFD;
+  --ink: #17211F;
+  --body: #33403D;
+  --muted: #5D6E6B;
+  --teal: #2F6F6A;
+  --pine: #1C4743;
+  --line: #D4DDDB;
+  --live: #C98A2D;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  background: var(--paper);
+  color: var(--body);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.68;
+}
+html[data-lang="zh"] body { font-family: "IBM Plex Sans", "Noto Sans TC", sans-serif; line-height: 1.85; }
+html[data-lang="ja"] body { font-family: "IBM Plex Sans", "Noto Sans JP", sans-serif; line-height: 1.85; }
+
+/* language visibility */
+html[data-lang="en"] .l-zh, html[data-lang="en"] .l-ja { display: none !important; }
+html[data-lang="zh"] .l-en, html[data-lang="zh"] .l-ja { display: none !important; }
+html[data-lang="ja"] .l-en, html[data-lang="ja"] .l-zh { display: none !important; }
+
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+a { color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color .15s; }
+a:hover { border-color: var(--teal); }
+a:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 2px; }
+
+.mono { font-family: "IBM Plex Mono", monospace; }
+
+/* ---------- Nav ---------- */
+nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.navrow { display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 14px; }
+.navname { font-family: "Space Grotesk", sans-serif; font-weight: 700; color: var(--ink); font-size: 15px; letter-spacing: .02em; border: none; }
+.navright { display: flex; align-items: center; gap: 18px; }
+.navlinks a { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); border: none; margin-left: 18px; letter-spacing: .04em; }
+.navlinks a:hover { color: var(--teal); }
+.langsw { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.langsw button {
+  font-family: "IBM Plex Mono", monospace; font-size: 11.5px;
+  background: transparent; border: none; color: var(--muted);
+  padding: 5px 11px; cursor: pointer; letter-spacing: .03em;
+}
+.langsw button + button { border-left: 1px solid var(--line); }
+.langsw button[aria-pressed="true"] { background: var(--teal); color: #fff; }
+.langsw button:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+
+/* ---------- Hero ---------- */
+header.hero { padding: 84px 0 64px; }
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12.5px; letter-spacing: .14em; color: var(--muted);
+  text-transform: uppercase; margin-bottom: 22px;
+}
+.eyebrow b { color: var(--teal); font-weight: 500; }
+h1 {
+  font-family: "Space Grotesk", "Noto Sans TC", "Noto Sans JP", sans-serif;
+  font-weight: 700; color: var(--ink);
+  font-size: clamp(32px, 5.4vw, 52px);
+  line-height: 1.16; letter-spacing: -0.015em;
+  max-width: 17em;
+  text-wrap: balance;
+}
+html[data-lang="zh"] h1, html[data-lang="ja"] h1 { font-size: clamp(28px, 4.7vw, 45px); letter-spacing: 0; }
+h1 .t { color: var(--teal); }
+.lede { margin-top: 26px; max-width: 40em; font-size: 18px; }
+.hero-links { margin-top: 30px; display: flex; gap: 22px; flex-wrap: wrap; }
+.hero-links a { font-family: "IBM Plex Mono", monospace; font-size: 13.5px; letter-spacing: .03em; padding-bottom: 2px; }
+
+/* ---------- Case studies ---------- */
+.cases { border-top: 1px solid var(--line); }
+.case { padding: 72px 0; border-bottom: 1px solid var(--line); }
+.tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--pine);
+  background: color-mix(in srgb, var(--teal) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--teal) 28%, transparent);
+  padding: 5px 12px; border-radius: 999px; margin-bottom: 18px;
+}
+.tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+.tag.live .dot { background: var(--live); }
+h2 {
+  font-family: "Space Grotesk", "Noto Sans TC", "Noto Sans JP", sans-serif;
+  font-weight: 700; color: var(--ink);
+  font-size: clamp(24px, 3.4vw, 32px);
+  letter-spacing: -0.01em; margin-bottom: 6px;
+}
+.sub { color: var(--muted); font-size: 15.5px; margin-bottom: 26px; max-width: 46em; }
+
+.spec {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--line); border: 1px solid var(--line);
+  border-radius: 8px; overflow: hidden; margin-bottom: 30px;
+}
+.spec > div { background: var(--panel); padding: 12px 16px; }
+.spec .k {
+  font-family: "IBM Plex Mono", monospace; font-size: 10.5px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: 3px;
+}
+.spec .v { font-size: 13.5px; color: var(--ink); font-weight: 500; line-height: 1.5; }
+
+.case p { max-width: 42em; margin-bottom: 16px; }
+
+figure.diagram {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  padding: 26px 22px 14px; margin: 30px 0;
+}
+figure.diagram svg { width: 100%; height: auto; display: block; }
+figcaption {
+  font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--muted); text-align: center; padding-top: 12px;
+  letter-spacing: .04em;
+}
+
+h3 {
+  font-family: "Space Grotesk", "Noto Sans TC", "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  color: var(--pine); font-size: 14px; letter-spacing: .12em;
+  text-transform: uppercase; margin: 30px 0 12px;
+}
+ul.decisions { list-style: none; max-width: 44em; }
+ul.decisions li { position: relative; padding-left: 20px; margin-bottom: 11px; }
+ul.decisions li::before {
+  content: ""; position: absolute; left: 2px; top: 12px;
+  width: 7px; height: 2px; background: var(--teal);
+}
+ul.decisions b { color: var(--ink); font-weight: 600; }
+
+.outcomes { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 26px; }
+.outcome .n {
+  font-family: "Space Grotesk", sans-serif; font-weight: 700;
+  font-size: 30px; color: var(--teal); line-height: 1.1;
+}
+.outcome .l { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--muted); letter-spacing: .04em; }
+
+.case-links { margin-top: 26px; display: flex; gap: 20px; flex-wrap: wrap; }
+.case-links a { font-family: "IBM Plex Mono", monospace; font-size: 13px; }
+
+/* ---------- About / footer ---------- */
+.about { padding: 64px 0; }
+.about p { max-width: 44em; margin-bottom: 14px; }
+.kv { display: flex; gap: 16px; align-items: baseline; max-width: 44em; margin-top: 10px; }
+.kv:first-of-type { margin-top: 24px; }
+.kv .kk {
+  font-family: "IBM Plex Mono", monospace; font-size: 10.5px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+  flex: 0 0 78px;
+}
+.kv .vv { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); line-height: 1.75; }
+@media (max-width: 640px) {
+  .kv { display: block; }
+  .kv .kk { margin-bottom: 2px; }
+}
+footer {
+  border-top: 1px solid var(--line);
+  padding: 34px 0 44px;
+}
+.footrow {
+  font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+}
+.footrow a { border: none; color: var(--muted); }
+.footrow a:hover { color: var(--teal); }
+
+@media (max-width: 640px) {
+  .navlinks { display: none; }
+  .spec { grid-template-columns: 1fr; }
+  .case { padding: 56px 0; }
+  header.hero { padding: 60px 0 48px; }
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap navrow">
+  <span class="navname">rin.hsu</span>
+  <span class="navright">
+    <span class="navlinks">
+      <a href="#arcadegalaxy">arcadegalaxy</a><a href="#opendal">opendal</a><a href="#viewsystem">viewsystem</a><a href="#warcraft">warcraft-iii</a><a href="#side-projects">side projects</a><a href="#about">about</a>
+    </span>
+    <span class="langsw" role="group" aria-label="Language">
+      <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+      <button type="button" data-setlang="zh" aria-pressed="false">中文</button>
+      <button type="button" data-setlang="ja" aria-pressed="false">日本語</button>
+    </span>
+  </span>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Hsu, Chen Lin · <b>Rin</b> — Backend Engineer, Taipei</div>
+  <h1>
+    <span class="l-en">Backend engineering, <span class="t">for games.</span></span>
+    <span class="l-zh">我致力於<span class="t">後端與遊戲產業</span>。</span>
+    <span class="l-ja">バックエンド開発を、<span class="t">ゲーム業界で。</span></span>
+  </h1>
+  <p class="lede">
+    <span class="l-en">Five years of backend work in C# / .NET and Rust. For each system below I've written down the trade-offs I made and the numbers I actually measured.</span>
+    <span class="l-zh">約五年後端開發經驗，主要使用 C# / .NET 與 Rust。以下每一套系統，我都寫下了當時的取捨與實際量到的數字。</span>
+    <span class="l-ja">C# / .NET と Rust を中心に約5年のバックエンド開発経験。以下の各システムについて、その時の判断と実際に計測した数字を書き残しています。</span>
+  </p>
+  <div class="hero-links">
+    <a href="https://github.com/Fatorin">github.com/Fatorin</a>
+    <a href="mailto:sksly789@gmail.com">sksly789@gmail.com</a>
+  </div>
+</div></header>
+
+<div class="cases">
+
+<!-- ================= ArcadeGalaxy ================= -->
+<section class="case" id="arcadegalaxy"><div class="wrap">
+  <span class="tag live"><span class="dot"></span>Production · Live on Steam</span>
+  <h2>ArcadeGalaxy</h2>
+  <div class="sub">
+    <span class="l-en">Sole backend engineer for a commercial party platformer — architecture, deployment, and operations, Oct 2022 to Feb 2025.</span>
+    <span class="l-zh">商業派對遊戲的唯一後端工程師——架構、部署與維運，2022.10 – 2025.02。</span>
+    <span class="l-ja">商業パーティーゲームの唯一のバックエンドエンジニアとして、設計・デプロイ・運用を担当（2022年10月〜2025年2月）。</span>
+  </div>
+
+  <div class="spec">
+    <div><div class="k">Role</div><div class="v">
+      <span class="l-en">Sole backend owner</span>
+      <span class="l-zh">唯一的後端負責人</span>
+      <span class="l-ja">バックエンドを一人で担当</span>
+    </div></div>
+    <div><div class="k">Stack</div><div class="v">C# (.NET) · PostgreSQL · Redis · SQS · SignalR · AWS</div></div>
+    <div><div class="k">Scope</div><div class="v">
+      <span class="l-en">10 game systems, from spec to live ops</span>
+      <span class="l-zh">10 項遊戲系統，從規格到上線維運</span>
+      <span class="l-ja">10のゲームシステムを仕様から運用まで</span>
+    </div></div>
+  </div>
+
+  <p>
+    <span class="l-en">ArcadeGalaxy is a multiplayer party game on Steam. I owned the entire backend as the only server engineer on the team — every game system the designers specced, I designed, built, deployed, and kept running.</span>
+    <span class="l-zh">ArcadeGalaxy 是 Steam 上的多人派對遊戲。我是團隊裡唯一的伺服器工程師——企劃規格書上的每一個遊戲系統，都由我設計、實作、部署並持續維運。</span>
+    <span class="l-ja">ArcadeGalaxy は Steam のマルチプレイパーティーゲームです。チーム唯一のサーバーエンジニアとして、企画が仕様化したすべてのゲームシステムを、設計から実装、デプロイ、運用まで担当しました。</span>
+  </p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 860 300" role="img" aria-label="ArcadeGalaxy backend architecture">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#5D6E6B"/>
+        </marker>
+      </defs>
+      <style>
+        .bx { fill:#F5F7F6; stroke:#2F6F6A; stroke-width:1.4; rx:6; }
+        .bx2 { fill:#FDFEFD; stroke:#8FADA9; stroke-width:1.2; stroke-dasharray:4 3; rx:6; }
+        .lb { font-family:"IBM Plex Mono",monospace; font-size:12.5px; fill:#17211F; }
+        .sm { font-family:"IBM Plex Mono",monospace; font-size:10.5px; fill:#5D6E6B; }
+        .ln { stroke:#5D6E6B; stroke-width:1.2; fill:none; }
+      </style>
+      <rect class="bx2" x="20" y="120" width="130" height="56"/>
+      <text class="lb" x="85" y="144" text-anchor="middle">Unity client</text>
+      <text class="sm" x="85" y="161" text-anchor="middle">players</text>
+      <rect class="bx" x="240" y="110" width="170" height="76"/>
+      <text class="lb" x="325" y="140" text-anchor="middle">.NET API servers</text>
+      <text class="sm" x="325" y="158" text-anchor="middle">REST + SignalR (WS)</text>
+      <rect class="bx" x="240" y="20" width="170" height="56"/>
+      <text class="lb" x="325" y="44" text-anchor="middle">OIDC IdP</text>
+      <text class="sm" x="325" y="61" text-anchor="middle">OpenIddict, custom</text>
+      <rect class="bx" x="500" y="210" width="150" height="56"/>
+      <text class="lb" x="575" y="234" text-anchor="middle">SQS consumer</text>
+      <text class="sm" x="575" y="251" text-anchor="middle">on-chain writes</text>
+      <rect class="bx2" x="710" y="210" width="130" height="56"/>
+      <text class="lb" x="775" y="234" text-anchor="middle">Blockchain</text>
+      <text class="sm" x="775" y="251" text-anchor="middle">ledger records</text>
+      <rect class="bx" x="500" y="46" width="150" height="56"/>
+      <text class="lb" x="575" y="70" text-anchor="middle">PostgreSQL</text>
+      <text class="sm" x="575" y="87" text-anchor="middle">RDS</text>
+      <rect class="bx" x="500" y="120" width="150" height="56"/>
+      <text class="lb" x="575" y="144" text-anchor="middle">Redis</text>
+      <text class="sm" x="575" y="161" text-anchor="middle">ElastiCache</text>
+      <rect class="bx2" x="710" y="120" width="130" height="56"/>
+      <text class="lb" x="775" y="144" text-anchor="middle">Steam</text>
+      <text class="sm" x="775" y="161" text-anchor="middle">payments</text>
+      <path class="ln" d="M150 148 H232" marker-end="url(#ar)"/>
+      <path class="ln" d="M325 110 V84" marker-end="url(#ar)"/>
+      <path class="ln" d="M410 126 C450 110 460 84 492 76" marker-end="url(#ar)"/>
+      <path class="ln" d="M410 148 H492" marker-end="url(#ar)"/>
+      <path class="ln" d="M410 170 C450 186 460 224 492 234" marker-end="url(#ar)"/>
+      <path class="ln" d="M650 148 H702" marker-end="url(#ar)"/>
+      <path class="ln" d="M650 238 H702" marker-end="url(#ar)"/>
+    </svg>
+    <figcaption>core topology — auth, realtime, on-chain writes, and payments around one API tier</figcaption>
+  </figure>
+
+  <h3>
+    <span class="l-en">Decisions that mattered</span>
+    <span class="l-zh">關鍵決策</span>
+    <span class="l-ja">重要だった意思決定</span>
+  </h3>
+  <ul class="decisions">
+    <li>
+      <span class="l-en"><b>Built the identity provider instead of buying it.</b> Firebase Auth is unavailable in some player regions, so I implemented a custom OIDC IdP with OpenIddict. Players everywhere log in through the same flow, and the game owns its account system.</span>
+      <span class="l-zh"><b>自建身分驗證系統，而不是採用現成服務。</b>部分玩家地區無法使用 Firebase Auth，因此我以 OpenIddict 實作了自有的 OIDC IdP。所有地區的玩家走同一套登入流程，帳號系統也完全掌握在遊戲手上。</span>
+      <span class="l-ja"><b>認証基盤は買わずに作る。</b>一部地域では Firebase Auth が利用できないため、OpenIddict で独自の OIDC IdP を実装しました。全地域のプレイヤーが同じログインフローを利用でき、アカウント基盤を自社で保有できます。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Cut the AWS bill by 75% without cutting capacity.</b> Iterative architecture work — right-sizing instances, caching with Redis, removing redundant workloads — brought operating cost down to a quarter of the original.</span>
+      <span class="l-zh"><b>在不犧牲容量的前提下砍掉 75% 的 AWS 費用。</b>透過持續的架構調整——instance 規格調整、Redis 快取、移除多餘的運算負載——將維運成本降到原本的四分之一。</span>
+      <span class="l-ja"><b>性能を落とさず AWS コストを75%削減。</b>インスタンスの適正化、Redis キャッシュ、冗長なワークロードの削減など、継続的なアーキテクチャ改善により運用コストを4分の1にしました。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>SQS as the path to the chain, SignalR as the path to the player.</b> On-chain records are written through an SQS consumer — the message broker absorbs blockchain latency and gives every write retries. Realtime features like the friend system go over SignalR instead. Keeping the two paths separate kept both simple.</span>
+      <span class="l-zh"><b>SQS 通往鏈上，SignalR 通往玩家。</b>寫入鏈上紀錄時，一律透過 SQS consumer 送出——這個 message broker 吸收了區塊鏈的延遲，也讓每一筆寫入都帶有重試。好友系統之類的即時功能則走 SignalR。把兩條路徑分開，讓兩邊都保持簡單。</span>
+      <span class="l-ja"><b>SQS はチェーンへの経路、SignalR はプレイヤーへの経路。</b>オンチェーン記録の書き込みは SQS consumer 経由で行い、メッセージブローカーがブロックチェーンのレイテンシを吸収し、各書き込みにリトライを与えます。フレンド機能などのリアルタイム処理は SignalR へ。経路を分けることで、双方をシンプルに保ちました。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Steam payments handled server-side.</b> Transaction flow, verification, and reconciliation live in the backend, not the client.</span>
+      <span class="l-zh"><b>Steam 金流全部在伺服器端處理。</b>交易流程、驗證與對帳都放在後端，而不是客戶端。</span>
+      <span class="l-ja"><b>Steam 決済はすべてサーバー側で処理。</b>取引フロー、検証、照合はクライアントではなくバックエンドに置いています。</span>
+    </li>
+  </ul>
+
+  <div class="outcomes">
+    <div class="outcome"><div class="n">−75%</div><div class="l">aws operating cost</div></div>
+    <div class="outcome"><div class="n">10</div><div class="l">game systems shipped</div></div>
+    <div class="outcome"><div class="n">1</div><div class="l">backend engineer</div></div>
+  </div>
+
+  <div class="case-links">
+    <a href="https://store.steampowered.com/app/3090620/Arcade_Galaxy/">→ store page on Steam</a>
+  </div>
+</div></section>
+
+<!-- ================= OpenDAL ================= -->
+<section class="case" id="opendal"><div class="wrap">
+  <span class="tag"><span class="dot"></span>Open source · Apache Software Foundation</span>
+  <h2>Apache OpenDAL — .NET binding</h2>
+  <div class="sub">
+    <span class="l-en">Committer. I implement the C# binding of a Rust data-access layer used across the Apache ecosystem.</span>
+    <span class="l-zh">Committer。實作這套 Rust 資料存取層的 C# binding，OpenDAL 廣泛應用於 Apache 生態系。</span>
+    <span class="l-ja">Committer。Apache エコシステムで広く使われる Rust 製データアクセス層の C# バインディングを実装。</span>
+  </div>
+
+  <div class="spec">
+    <div><div class="k">Role</div><div class="v">
+      <span class="l-en">Committer · C# binding implementer</span>
+      <span class="l-zh">Committer · C# binding 實作者</span>
+      <span class="l-ja">Committer · C# バインディング実装</span>
+    </div></div>
+    <div><div class="k">Stack</div><div class="v">Rust · C# · FFI / interop · GitHub Actions</div></div>
+    <div><div class="k">Collaboration</div><div class="v">
+      <span class="l-en">Worldwide maintainers, English, async reviews</span>
+      <span class="l-zh">跨國維護者、英文溝通、非同步 review</span>
+      <span class="l-ja">世界中のメンテナーと英語で非同期レビュー</span>
+    </div></div>
+  </div>
+
+  <p>
+    <span class="l-en">OpenDAL gives applications one API for many storage services — S3, GCS, Azure Blob, local filesystems, and dozens more. The core is Rust; my work is the layer that makes it feel native to .NET developers, which means everything that lives on the boundary between the two runtimes.</span>
+    <span class="l-zh">OpenDAL 讓應用程式用同一套 API 存取多種儲存服務——S3、GCS、Azure Blob、本地檔案系統等數十種。核心是 Rust；我的工作是讓它對 .NET 開發者來說像原生套件一樣自然，也就是兩個 runtime 邊界上的所有事情。</span>
+    <span class="l-ja">OpenDAL は S3、GCS、Azure Blob、ローカルファイルシステムなど数十種類のストレージを単一の API で扱えるライブラリです。コアは Rust 製。私の仕事は、それを .NET 開発者にとってネイティブに感じられるものにすること、つまり2つのランタイムの境界に存在するすべてです。</span>
+  </p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 860 210" role="img" aria-label="OpenDAL .NET binding layers">
+      <defs>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#5D6E6B"/>
+        </marker>
+      </defs>
+      <style>
+        .obx { fill:#F5F7F6; stroke:#2F6F6A; stroke-width:1.4; }
+        .obxh { fill:#EAF1F0; stroke:#2F6F6A; stroke-width:1.8; }
+        .obx2 { fill:#FDFEFD; stroke:#8FADA9; stroke-width:1.2; stroke-dasharray:4 3; }
+        .olb { font-family:"IBM Plex Mono",monospace; font-size:12.5px; fill:#17211F; }
+        .osm { font-family:"IBM Plex Mono",monospace; font-size:10.5px; fill:#5D6E6B; }
+        .oln { stroke:#5D6E6B; stroke-width:1.2; fill:none; }
+      </style>
+      <rect class="obx2" x="20" y="76" width="150" height="58" rx="6"/>
+      <text class="olb" x="95" y="101" text-anchor="middle">.NET app</text>
+      <text class="osm" x="95" y="118" text-anchor="middle">any C# codebase</text>
+      <rect class="obxh" x="230" y="66" width="180" height="78" rx="6"/>
+      <text class="olb" x="320" y="94" text-anchor="middle">C# API surface</text>
+      <text class="osm" x="320" y="112" text-anchor="middle">idiomatic types, errors,</text>
+      <text class="osm" x="320" y="126" text-anchor="middle">async — my layer</text>
+      <rect class="obxh" x="450" y="66" width="130" height="78" rx="6"/>
+      <text class="olb" x="515" y="94" text-anchor="middle">FFI boundary</text>
+      <text class="osm" x="515" y="112" text-anchor="middle">ownership, lifetimes,</text>
+      <text class="osm" x="515" y="126" text-anchor="middle">marshalling — my layer</text>
+      <rect class="obx" x="620" y="76" width="120" height="58" rx="6"/>
+      <text class="olb" x="680" y="101" text-anchor="middle">Rust core</text>
+      <text class="osm" x="680" y="118" text-anchor="middle">opendal</text>
+      <rect class="obx2" x="780" y="24" width="62" height="38" rx="6"/>
+      <text class="osm" x="811" y="47" text-anchor="middle">S3</text>
+      <rect class="obx2" x="780" y="86" width="62" height="38" rx="6"/>
+      <text class="osm" x="811" y="109" text-anchor="middle">GCS</text>
+      <rect class="obx2" x="780" y="148" width="62" height="38" rx="6"/>
+      <text class="osm" x="811" y="171" text-anchor="middle">40+ more</text>
+      <path class="oln" d="M170 105 H222" marker-end="url(#ar2)"/>
+      <path class="oln" d="M410 105 H442" marker-end="url(#ar2)"/>
+      <path class="oln" d="M580 105 H612" marker-end="url(#ar2)"/>
+      <path class="oln" d="M740 96 C756 84 762 56 772 46" marker-end="url(#ar2)"/>
+      <path class="oln" d="M740 105 H772" marker-end="url(#ar2)"/>
+      <path class="oln" d="M740 114 C756 126 762 154 772 164" marker-end="url(#ar2)"/>
+    </svg>
+    <figcaption>the binding owns everything between the app and the rust core</figcaption>
+  </figure>
+
+  <h3>
+    <span class="l-en">What the work looks like</span>
+    <span class="l-zh">這份工作的實際樣貌</span>
+    <span class="l-ja">具体的な仕事内容</span>
+  </h3>
+  <ul class="decisions">
+    <li>
+      <span class="l-en"><b>API design across a language boundary.</b> Rust's ownership model and C#'s garbage collector disagree about who frees memory and when. The binding resolves that argument so users never have to think about it.</span>
+      <span class="l-zh"><b>跨語言邊界的 API 設計。</b>Rust 的所有權模型和 C# 的 GC 對「誰、在什麼時候釋放記憶體」意見不合。binding 的工作就是調停這場爭論，讓使用者完全不用去想。</span>
+      <span class="l-ja"><b>言語境界をまたぐ API 設計。</b>Rust の所有権モデルと C# の GC は「誰がいつメモリを解放するか」で意見が合いません。その調停を binding が担い、利用者は何も意識せずに済みます。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>When a reviewer asked how fast it was, I went and measured.</b> A review comment on the FFI-boundary rework asked how the binding compares with .NET's native IO, so I built a benchmark suite against <span class="mono">System.IO</span> and <span class="mono">AWSSDK.S3</span>. The answer was uncomfortable at small payloads — fixed FFI cost makes 16 KiB reads several times slower — and good at large ones: chunked reads reach 0.91× of <span class="mono">FileStream</span> at 128 MiB, and the callback form allocates 6 KB where the native path allocates 134 MB. Both halves are published.</span>
+      <span class="l-zh"><b>Reviewer 問它有多快，我就去量。</b>FFI 邊界重構的 PR 上有人問「這個 binding 跟 .NET 原生 IO 比如何？」，於是我寫了一整套對照 <span class="mono">System.IO</span> 與 <span class="mono">AWSSDK.S3</span> 的 benchmark。小 payload 的答案並不好看——固定的 FFI 成本讓 16 KiB 讀取慢上數倍；大 payload 則相反：128 MiB 的分塊讀取達到 <span class="mono">FileStream</span> 的 0.91×，而 callback 形式只配置 6 KB，原生路徑則要 134 MB。兩半數據我都公開。</span>
+      <span class="l-ja"><b>レビューで速度を問われたので、測りに行った。</b>FFI 境界の刷新 PR で「このバインディングは .NET ネイティブ IO と比べてどうなのか」と聞かれ、<span class="mono">System.IO</span> と <span class="mono">AWSSDK.S3</span> を対照するベンチマーク一式を書きました。小さいペイロードでの答えは芳しくなく——固定の FFI コストにより 16 KiB 読み取りは数倍遅い——大きいペイロードでは逆転します。128 MiB のチャンク読み取りは <span class="mono">FileStream</span> の 0.91× に達し、コールバック形式の確保は 6 KB、ネイティブ側は 134 MB。どちらの結果も公開しています。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Keyless release pipeline.</b> I set up NuGet Trusted Publishing for the package — releases authenticate with OIDC instead of long-lived API keys, which removes a whole class of supply-chain risk.</span>
+      <span class="l-zh"><b>無金鑰的發布流程。</b>我為套件建置了 NuGet Trusted Publishing——發布改用 OIDC 驗證而非長期 API key，直接消除一整類供應鏈風險。</span>
+      <span class="l-ja"><b>キーレスなリリースパイプライン。</b>NuGet Trusted Publishing を導入し、リリース認証を長期 API キーから OIDC に置き換え、サプライチェーンリスクを一類まるごと排除しました。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Apache-style collaboration.</b> Design discussions, reviews, and releases all happen in public, in English, across time zones. Every decision has a paper trail anyone can read.</span>
+      <span class="l-zh"><b>Apache 式的協作。</b>設計討論、review 與發布全部公開進行，使用英文、跨時區。每個決策都留下任何人可查的紀錄。</span>
+      <span class="l-ja"><b>Apache 流のコラボレーション。</b>設計議論、レビュー、リリースはすべて公開の場で、英語で、タイムゾーンを越えて行われます。すべての意思決定に、誰でも読める記録が残ります。</span>
+    </li>
+  </ul>
+
+  <div class="outcomes">
+    <div class="outcome"><div class="n">14</div><div class="l">merged prs upstream</div></div>
+    <div class="outcome"><div class="n">0.91×</div><div class="l">vs filestream at 128 mib</div></div>
+    <div class="outcome"><div class="n">6 KB</div><div class="l">alloc where native takes 134 mb</div></div>
+  </div>
+
+  <div class="case-links">
+    <a href="https://github.com/apache/opendal">→ apache/opendal</a>
+    <a href="https://github.com/apache/opendal/commits?author=Fatorin">→ my commits</a>
+    <a href="https://github.com/Fatorin/opendal-dotnet-io-bench">→ the benchmark suite</a>
+  </div>
+</div></section>
+
+<!-- ================= ViewSystem ================= -->
+<section class="case" id="viewsystem"><div class="wrap">
+  <span class="tag"><span class="dot"></span>Open source · Unity client</span>
+  <h2>MacacaViewSystem — Addressables</h2>
+  <div class="sub">
+    <span class="l-en">Adding a second asset-loading mode to a Unity UI framework that was already in production, without asking anyone already using it to change a thing.</span>
+    <span class="l-zh">替一套已經在線上跑的 Unity UI 框架加上第二種資產載入模式，而且不要求任何既有使用者改動什麼。</span>
+    <span class="l-ja">すでに運用中の Unity UI フレームワークに、第二の読み込みモードを追加する。既存の利用者には何ひとつ変更を求めずに。</span>
+  </div>
+
+  <div class="spec">
+    <div><div class="k">Role</div><div class="v">
+      <span class="l-en">Feature contributor</span>
+      <span class="l-zh">功能貢獻者</span>
+      <span class="l-ja">機能コントリビューター</span>
+    </div></div>
+    <div><div class="k">Stack</div><div class="v">C# · Unity · Addressables · editor tooling</div></div>
+    <div><div class="k">Shipped</div><div class="v">
+      <span class="l-en">15 commits on master, Nov 2025 – Apr 2026</span>
+      <span class="l-zh">15 個 commit 進 master，2025.11 – 2026.04</span>
+      <span class="l-ja">master へ15コミット、2025年11月〜2026年4月</span>
+    </div></div>
+  </div>
+
+  <p>
+    <span class="l-en">MacacaViewSystem is my former employer's open-source Unity UI system — views are composed from reusable elements, and the framework decides what to show and when. It loaded every view asset directly, which meant all of them shipped inside the build. I added Addressables as a second loading mode, so views can be packed into bundles and fetched on demand instead.</span>
+    <span class="l-zh">MacacaViewSystem 是前公司開源的 Unity UI 系統——畫面由可重用的元件組成，框架負責決定何時顯示什麼。它原本每個 view 資產都直接載入，等於全部打進 build 裡。我加上 Addressables 作為第二種載入模式，讓 view 改成打包成 bundle、需要時再抓。</span>
+    <span class="l-ja">MacacaViewSystem は前職の会社が公開している Unity の UI システムです。画面は再利用可能な要素から構成され、何をいつ表示するかはフレームワークが決めます。従来は view のアセットを直接読み込む方式で、すべてがビルドに同梱されていました。そこへ Addressables を第二の読み込みモードとして追加し、view をバンドル化して必要時に取得できるようにしました。</span>
+  </p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 860 316" role="img" aria-label="ViewSystem asset loading — the original direct path kept alongside a new addressables path">
+      <defs>
+        <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#5D6E6B"/>
+        </marker>
+      </defs>
+      <style>
+        .vbx { fill:#F5F7F6; stroke:#2F6F6A; stroke-width:1.4; }
+        .vbxh { fill:#EAF1F0; stroke:#2F6F6A; stroke-width:1.8; }
+        .vbx2 { fill:#FDFEFD; stroke:#8FADA9; stroke-width:1.2; stroke-dasharray:4 3; }
+        .vlb { font-family:"IBM Plex Mono",monospace; font-size:12.5px; fill:#17211F; }
+        .vsm { font-family:"IBM Plex Mono",monospace; font-size:10.5px; fill:#5D6E6B; }
+        .vln { stroke:#5D6E6B; stroke-width:1.2; fill:none; }
+        .vband { fill:none; stroke:#8FADA9; stroke-width:1.1; stroke-dasharray:3 3; }
+      </style>
+
+      <rect class="vbx" x="20" y="112" width="180" height="64" rx="6"/>
+      <text class="vlb" x="110" y="140" text-anchor="middle">view element</text>
+      <text class="vsm" x="110" y="157" text-anchor="middle">requested by the ui</text>
+
+      <rect class="vbx2" x="290" y="30" width="190" height="64" rx="6"/>
+      <text class="vlb" x="385" y="58" text-anchor="middle">direct load</text>
+      <text class="vsm" x="385" y="75" text-anchor="middle">original path, untouched</text>
+
+      <rect class="vbxh" x="290" y="176" width="190" height="64" rx="6"/>
+      <text class="vlb" x="385" y="204" text-anchor="middle">addressables</text>
+      <text class="vsm" x="385" y="221" text-anchor="middle">added — async</text>
+
+      <rect class="vbx2" x="570" y="30" width="180" height="64" rx="6"/>
+      <text class="vlb" x="660" y="58" text-anchor="middle">inside the build</text>
+      <text class="vsm" x="660" y="75" text-anchor="middle">every view ships</text>
+
+      <rect class="vbx" x="570" y="176" width="180" height="64" rx="6"/>
+      <text class="vlb" x="660" y="204" text-anchor="middle">asset bundles</text>
+      <text class="vsm" x="660" y="221" text-anchor="middle">fetched on demand</text>
+
+      <path class="vln" d="M200 132 C240 112 250 70 282 62" marker-end="url(#ar4)"/>
+      <path class="vln" d="M200 156 C240 176 250 200 282 208" marker-end="url(#ar4)"/>
+      <path class="vln" d="M480 62 H562" marker-end="url(#ar4)"/>
+      <path class="vln" d="M480 208 H562" marker-end="url(#ar4)"/>
+      <text class="vsm" x="243" y="112">a setting picks</text>
+      <text class="vsm" x="243" y="126">the path</text>
+
+      <rect class="vband" x="20" y="266" width="820" height="34" rx="6"/>
+      <text class="vsm" x="430" y="287" text-anchor="middle">editor tooling assigns addresses and packs bundles at build time · page state, transitions and pools had to learn to wait</text>
+    </svg>
+    <figcaption>two paths, one of them new — and the old one still the default</figcaption>
+  </figure>
+
+  <h3>
+    <span class="l-en">What the work involved</span>
+    <span class="l-zh">這份工作實際做了什麼</span>
+    <span class="l-ja">実際に取り組んだこと</span>
+  </h3>
+  <ul class="decisions">
+    <li>
+      <span class="l-en"><b>The loading call was the easy part.</b> An element-based UI system built on synchronous instantiation assumes the asset is simply there when a page opens. Once assets start arriving late, that assumption breaks everywhere it was quietly relied on — page state, overlay registration, transition flags, and the element pools all had to tolerate a view that hasn't materialised yet. Most of the commits are that, not the Addressables API.</span>
+      <span class="l-zh"><b>載入那一行是最簡單的部分。</b>一套建立在同步實例化之上的元件式 UI 系統，預設「開頁面的時候資產就在那裡」。一旦資產開始晚一點才到，這個假設會在所有默默依賴它的地方一起垮掉——page 狀態、overlay 註冊、轉場旗標、element pool，全都得能容忍一個還沒生出來的 view。大部分的 commit 都花在這裡，而不是 Addressables 的 API。</span>
+      <span class="l-ja"><b>読み込みの呼び出しは、いちばん簡単な部分。</b>同期的なインスタンス化を前提に組まれた要素ベースの UI システムは、「ページを開く時点でアセットはそこにある」と想定しています。アセットが後から届くようになると、その前提は暗黙に依存していたあらゆる箇所で崩れます——ページ状態、オーバーレイの登録、トランジションのフラグ、エレメントプール。どれも「まだ実体化していない view」を許容できなければなりません。コミットの大半は Addressables の API ではなく、こちらに費やされています。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>The old path stays the default.</b> This is a framework other people's projects already depend on, so a migration nobody asked for is a bug. Addressables is a setting: leave it off and the original loading path behaves exactly as before. Turn it on and the editor tooling assigns addresses and packs the bundles at build time, so the new mode doesn't cost anyone a manual asset-management chore either.</span>
+      <span class="l-zh"><b>舊路徑仍然是預設。</b>這是一套已經有別人的專案在依賴的框架，所以「沒人要求的遷移」本身就是一個 bug。Addressables 是一個設定：不打開，原本的載入路徑行為完全不變；打開，editor 工具會在 build 時自動配址與打包——新模式也不會換來一份手動管理資產的雜事。</span>
+      <span class="l-ja"><b>既存の経路が、あくまで既定。</b>他者のプロジェクトがすでに依存しているフレームワークである以上、誰も望んでいない移行作業はそれ自体がバグです。Addressables は設定のひとつ。オフのままなら従来の読み込み経路は以前とまったく同じ挙動をします。オンにすれば、エディタ側のツールがビルド時にアドレス割り当てとバンドル化を行うため、新モードが手作業のアセット管理を増やすこともありません。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>A generated asset that churns is everyone's problem.</b> The addressable configuration is written into a file that lives in version control, and the first version rewrote enough of it on every build to produce noisy diffs and merge conflicts for the whole team. Narrowing what actually gets written was a small change that only matters if you think past your own machine.</span>
+      <span class="l-zh"><b>一份每次都在變動的產生檔，是整個團隊的問題。</b>Addressable 的設定會寫進一個進版控的檔案，而第一版每次 build 都改寫掉太多內容，替整個團隊製造出雜訊很大的 diff 與合併衝突。把「實際會被寫入的範圍」縮小是個很小的改動——但它只有在你想到自己這台機器以外的地方時才會發生。</span>
+      <span class="l-ja"><b>毎回書き換わる生成物は、チーム全体の問題になる。</b>Addressable の設定はバージョン管理下のファイルに書き込まれますが、最初の実装はビルドのたびに書き換える範囲が広すぎ、チーム全体にノイズの多い差分とマージ衝突を生んでいました。実際に書き込む範囲を絞るのは小さな変更です——ただし、自分のマシンの外側まで考えて初めて出てくる変更でもあります。</span>
+    </li>
+  </ul>
+
+  <div class="outcomes">
+    <div class="outcome"><div class="n">15</div><div class="l">commits on master</div></div>
+    <div class="outcome"><div class="n">2</div><div class="l">loading modes, old one default</div></div>
+    <div class="outcome"><div class="n">0</div><div class="l">migration asked of users</div></div>
+  </div>
+
+  <p class="mono" style="font-size:13px; color:var(--muted); margin-top:26px;">
+    <span class="l-en">These commits are under <a href="https://github.com/rin-macaca">rin-macaca</a>, the account I used at MacacaGames — my personal work is under <a href="https://github.com/Fatorin">Fatorin</a>.</span>
+    <span class="l-zh">這些 commit 掛在 <a href="https://github.com/rin-macaca">rin-macaca</a> 名下，那是我在 MacacaGames 使用的帳號；個人專案則在 <a href="https://github.com/Fatorin">Fatorin</a>。</span>
+    <span class="l-ja">これらのコミットは MacacaGames 在籍時に使用していた <a href="https://github.com/rin-macaca">rin-macaca</a> 名義です。個人の作業は <a href="https://github.com/Fatorin">Fatorin</a> にあります。</span>
+  </p>
+
+  <div class="case-links">
+    <a href="https://github.com/MacacaGames/MacacaViewSystem">→ MacacaViewSystem</a>
+    <a href="https://github.com/MacacaGames/MacacaViewSystem/commits?author=rin-macaca">→ my commits</a>
+  </div>
+</div></section>
+
+<!-- ================= Warcraft III ================= -->
+<section class="case" id="warcraft"><div class="wrap">
+  <span class="tag"><span class="dot"></span>Community infrastructure · 2020 – present</span>
+  <h2>Warcraft III, kept alive</h2>
+  <div class="sub">
+    <span class="l-en">A community still plays a game from 2002. I've built and maintained its entire server stack for six years — hosting bot, account system, ladder, and the protocol libraries underneath.</span>
+    <span class="l-zh">有一群人到今天還在玩 2002 年的遊戲。這六年來，這個社群的整套伺服器架構由我打造與維護——開房機器人、帳號系統、積分系統，以及底下的協定函式庫。</span>
+    <span class="l-ja">2002年のゲームを、今も遊び続けているコミュニティがあります。この6年間、そのサーバー基盤一式を私が作り、支えてきました——ホスティングボット、アカウント基盤、レーティング、そしてその下のプロトコルライブラリまで。</span>
+  </div>
+
+  <div class="spec">
+    <div><div class="k">Role</div><div class="v">
+      <span class="l-en">Solo, every layer of it</span>
+      <span class="l-zh">獨立負責每一層</span>
+      <span class="l-ja">全レイヤーを単独で担当</span>
+    </div></div>
+    <div><div class="k">Stack</div><div class="v">Rust · Tokio · Go · C++ · C# · binary protocols</div></div>
+    <div><div class="k">Span</div><div class="v">
+      <span class="l-en">12 repositories, 2020 to now</span>
+      <span class="l-zh">12 個 repo，2020 年至今</span>
+      <span class="l-ja">12リポジトリ、2020年から現在まで</span>
+    </div></div>
+  </div>
+
+  <p>
+    <span class="l-en">Warcraft III custom-map communities survive on infrastructure nobody is paid to run: a Battle.net-compatible realm, a bot that hosts the games, an account system, a ladder. When the software that does this is fifteen years old and unmaintained, somebody has to keep it working. For this community, that has been me — and over six years the work grew from patching the original C++ to owning every piece of the stack.</span>
+    <span class="l-zh">Warcraft III 自訂地圖社群靠的是一套沒人付錢維護的基礎設施：一台相容 Battle.net 的伺服器、一個負責開房的機器人、一套帳號系統、一套積分系統。當這些軟體已經十五年沒人維護，總得有人讓它繼續動。這個社群的那個人是我——六年下來，工作從替原本的 C++ 打補丁，長成了掌握整條技術棧的每一塊。</span>
+    <span class="l-ja">Warcraft III のカスタムマップコミュニティは、誰も対価を受け取っていないインフラの上に成り立っています。Battle.net 互換のレルム、ゲームを立てるボット、アカウント基盤、レーティング。それらのソフトウェアが15年放置されていれば、誰かが動かし続けるしかありません。このコミュニティではそれが私でした。6年かけて、仕事は元の C++ にパッチを当てることから、スタックのすべてを自分で持つことへと育ちました。</span>
+  </p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 860 348" role="img" aria-label="Warcraft III community stack — hosting bot, account manager, ladder, and shared protocol crates">
+      <defs>
+        <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#5D6E6B"/>
+        </marker>
+      </defs>
+      <style>
+        .gbx { fill:#F5F7F6; stroke:#2F6F6A; stroke-width:1.4; }
+        .gbx2 { fill:#FDFEFD; stroke:#8FADA9; stroke-width:1.2; stroke-dasharray:4 3; }
+        .glb { font-family:"IBM Plex Mono",monospace; font-size:12.5px; fill:#17211F; }
+        .gsm { font-family:"IBM Plex Mono",monospace; font-size:10.5px; fill:#5D6E6B; }
+        .gln { stroke:#5D6E6B; stroke-width:1.2; fill:none; }
+        .gband { fill:none; stroke:#8FADA9; stroke-width:1.1; stroke-dasharray:3 3; }
+      </style>
+
+      <rect class="gbx2" x="15" y="22" width="120" height="56" rx="6"/>
+      <text class="glb" x="75" y="46" text-anchor="middle">WC3 client</text>
+      <text class="gsm" x="75" y="63" text-anchor="middle">1.26 – 1.28</text>
+
+      <rect class="gbx" x="175" y="14" width="160" height="72" rx="6"/>
+      <text class="glb" x="255" y="42" text-anchor="middle">ghostpp-rs</text>
+      <text class="gsm" x="255" y="59" text-anchor="middle">hosting · lobby</text>
+      <text class="gsm" x="255" y="73" text-anchor="middle">replay · rust</text>
+
+      <rect class="gbx2" x="375" y="14" width="150" height="72" rx="6"/>
+      <text class="glb" x="450" y="42" text-anchor="middle">PvPGN realm</text>
+      <text class="gsm" x="450" y="59" text-anchor="middle">battle.net v1</text>
+      <text class="gsm" x="450" y="73" text-anchor="middle">third-party</text>
+
+      <rect class="gbx" x="565" y="14" width="160" height="72" rx="6"/>
+      <text class="glb" x="645" y="42" text-anchor="middle">bn_manager</text>
+      <text class="gsm" x="645" y="59" text-anchor="middle">accounts · maps</text>
+      <text class="gsm" x="645" y="73" text-anchor="middle">bans · rust</text>
+
+      <rect class="gbx2" x="765" y="22" width="80" height="56" rx="6"/>
+      <text class="glb" x="805" y="46" text-anchor="middle">Discord</text>
+      <text class="gsm" x="805" y="63" text-anchor="middle">players</text>
+
+      <rect class="gbx" x="300" y="140" width="200" height="60" rx="6"/>
+      <text class="glb" x="400" y="166" text-anchor="middle">game records</text>
+      <text class="gsm" x="400" y="183" text-anchor="middle">games · players · bans</text>
+
+      <rect class="gbx" x="300" y="230" width="200" height="56" rx="6"/>
+      <text class="glb" x="400" y="254" text-anchor="middle">mmr-tracker</text>
+      <text class="gsm" x="400" y="271" text-anchor="middle">ladder · go</text>
+
+      <path class="gln" d="M135 50 H167" marker-end="url(#ar3)"/>
+      <path class="gln" d="M335 50 H367" marker-end="url(#ar3)"/>
+      <path class="gln" d="M565 50 H533" marker-end="url(#ar3)"/>
+      <path class="gln" d="M765 50 H733" marker-end="url(#ar3)"/>
+      <path class="gln" d="M255 86 C255 120 300 132 322 146" marker-end="url(#ar3)"/>
+      <path class="gln" d="M645 86 C645 120 600 132 578 146" marker-end="url(#ar3)"/>
+      <path class="gln" d="M400 200 V222" marker-end="url(#ar3)"/>
+      <text class="gsm" x="151" y="40" text-anchor="middle">tcp</text>
+      <text class="gsm" x="549" y="40" text-anchor="middle">telnet</text>
+
+      <rect class="gband" x="15" y="300" width="830" height="42" rx="6"/>
+      <text class="gsm" x="34" y="317">shared crates I wrote</text>
+      <text class="glb" x="34" y="334">pvpgn-hash-rs — xsha1 + cd-key decoding, pure rust   ·   stormlib-rs — mpq map archives</text>
+    </svg>
+    <figcaption>one community, four services, six years — everything solid-lined is mine</figcaption>
+  </figure>
+
+  <h3>
+    <span class="l-en">What it demonstrates</span>
+    <span class="l-zh">這條線證明了什麼</span>
+    <span class="l-ja">この積み重ねが示すもの</span>
+  </h3>
+  <ul class="decisions">
+    <li>
+      <span class="l-en"><b>Reading systems I didn't write, then replacing them.</b> ghost++ encodes years of accumulated protocol quirks in C++ built around a single-threaded 50 ms select loop. I ported the protocol layer byte-for-byte and rebuilt everything above it as Tokio async actors, so each connection and each game is a task with explicit failure modes. Understanding the original well enough to reproduce it was most of the project.</span>
+      <span class="l-zh"><b>讀懂不是自己寫的系統，然後取代它。</b>ghost++ 用 C++ 寫成，圍繞著一個單執行緒的 50ms select loop，裡面沉積了多年累積的協定細節。我把協定層 byte-for-byte 移植過來，上層則全部改建為 Tokio async actor——每個連線、每場遊戲都是一個 task，失敗模式明確可見。把原版理解到能重現的程度，本身就佔了這個專案的大半。</span>
+      <span class="l-ja"><b>自分が書いていないシステムを読み、そして置き換える。</b>ghost++ は単一スレッドの 50ms select ループを中心に組まれた C++ で、長年積み重なったプロトコルの癖が詰まっています。プロトコル層はバイト単位で移植し、その上を Tokio の async アクターとして作り直しました。各接続、各ゲームがタスクとなり、障害モードが明示的になります。元の実装を再現できるまで理解すること自体が、このプロジェクトの大半でした。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>I wrote the same system twice, in two languages.</b> The account and map-upload service started as <span class="mono">War3Tool</span> in Go. Living with it taught me what the shape should actually be, so the second version — <span class="mono">bn_manager</span>, in Rust — folded in Discord-driven registration, password resets, player reports, live room monitoring, and the ladder tables. The rewrite wasn't about the language; it was about finally knowing the requirements.</span>
+      <span class="l-zh"><b>同一套系統，我用兩種語言寫了兩次。</b>帳號與地圖上傳服務最早是 Go 寫的 <span class="mono">War3Tool</span>。用久了才明白它真正該長什麼樣，所以第二版 <span class="mono">bn_manager</span> 改用 Rust，並把 Discord 註冊、密碼重設、玩家檢舉、即時房間監控與積分資料表全部收進來。重寫的重點從來不是語言，而是我終於搞清楚需求了。</span>
+      <span class="l-ja"><b>同じシステムを、二つの言語で二度書いた。</b>アカウントとマップアップロードのサービスは、最初 Go の <span class="mono">War3Tool</span> でした。使い続けるうちに本来あるべき形が見え、二代目の <span class="mono">bn_manager</span> は Rust で書き直し、Discord 経由の登録、パスワード再設定、プレイヤー通報、ルームのリアルタイム監視、レーティングのテーブルまで取り込みました。書き直しの本質は言語ではなく、ようやく要件が分かったことでした。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Protocol work all the way to the bottom.</b> Battle.net's login path needs CD-key decoding, XSHA1 password hashing, and executable-revision checks. Rather than link an old C library, I ported them to pure Rust as <span class="mono">pvpgn-hash-rs</span>, and contributed the implementation back to the upstream <span class="mono">pvpgn</span> project. Map handling goes through <span class="mono">stormlib-rs</span>, which I also contribute to.</span>
+      <span class="l-zh"><b>協定工作一路做到最底層。</b>Battle.net 的登入流程需要 CD-key 解碼、XSHA1 密碼雜湊與執行檔版本檢查。我沒有去連結一個老舊的 C 函式庫，而是把它們以純 Rust 重寫為 <span class="mono">pvpgn-hash-rs</span>，並把實作回饋給上游的 <span class="mono">pvpgn</span> 專案。地圖處理則走 <span class="mono">stormlib-rs</span>，我同樣有貢獻。</span>
+      <span class="l-ja"><b>プロトコルの仕事を、最下層まで。</b>Battle.net のログイン経路には CD キーのデコード、XSHA1 パスワードハッシュ、実行ファイルのリビジョン検証が必要です。古い C ライブラリをリンクする代わりに、これらを純 Rust の <span class="mono">pvpgn-hash-rs</span> として移植し、上流の <span class="mono">pvpgn</span> プロジェクトへ還元しました。マップ処理は <span class="mono">stormlib-rs</span> を通し、こちらにも貢献しています。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Built for the people actually using it.</b> Reliable reconnects keep players in a match through a dropped connection. Every game is saved as a replay the client can open directly. And nothing user-facing is locked to one language — English, Korean, and Chinese all get spoken here. It matters most in the Discord bot, since that is where players actually register, reset passwords, and file reports; the hosting bot carries the same language catalog. Either can be extended to a new language by whoever runs it, without needing me.</span>
+      <span class="l-zh"><b>是為了真的在用的人而做的。</b>可靠重連讓玩家斷線後還能回到同一場遊戲。每一場都存成 client 可以直接打開的錄影檔。而且沒有任何面向使用者的文字被鎖死在單一語言——這裡英文、韓文、中文都有人講。最吃緊的是 Discord 機器人，因為註冊、重設密碼、檢舉這些事玩家都是在那裡完成的；開房機器人也帶著同一套語言檔。兩邊都能由架設的人自行擴充新語言，不需要來找我。</span>
+      <span class="l-ja"><b>実際に使う人のために作る。</b>信頼性のある再接続により、回線が切れてもプレイヤーは同じ試合に戻れます。すべての試合はクライアントで直接開けるリプレイとして保存されます。そしてユーザー向けの文言はどれも単一言語に固定されていません——ここでは英語・韓国語・中国語が飛び交います。とりわけ効いてくるのが Discord ボットで、登録・パスワード再設定・通報はすべてそこで行われるからです。ホスティングボットも同じ言語カタログを持ち、どちらも運営者自身が新しい言語を追加できます。私を介さずに。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>And now the map itself.</b> Alongside the servers I help maintain the custom map this community plays, which means its ceiling is whatever a 2002 engine allows. So I've started rebuilding it as a standalone game — prototypes in Godot and Unity first to find out which one fit, and now a real build in Unity. It's unfinished and not public, but it's the reason I care about the client side of a game and not only the servers behind it.</span>
+      <span class="l-zh"><b>現在輪到地圖本身。</b>除了伺服器，我也在維護這個社群在玩的那張自訂地圖——也就是說，它的天花板就是 2002 年那顆引擎能給的極限。所以我開始把它重建成一款獨立遊戲：先用 Godot 和 Unity 各做原型確認哪個合適，現在定案 Unity 正式製作中。它還沒完成，也還不公開，但這就是我在意遊戲客戶端、而不只是背後伺服器的原因。</span>
+      <span class="l-ja"><b>そして次は、マップそのもの。</b>サーバーと並行して、このコミュニティが遊ぶカスタムマップの保守にも関わっています。つまりその天井は、2002年のエンジンが許す範囲でしかない。そこで、独立したゲームとして作り直し始めました。まず Godot と Unity でプロトタイプを作って適性を見極め、現在は Unity で本制作中です。未完成で非公開ですが、サーバーだけでなくゲームのクライアント側にも関心を持つ理由が、ここにあります。</span>
+    </li>
+  </ul>
+
+  <div class="outcomes">
+    <div class="outcome"><div class="n">6</div><div class="l">years maintained</div></div>
+    <div class="outcome"><div class="n">12</div><div class="l">repos in the stack</div></div>
+    <div class="outcome"><div class="n">4</div><div class="l">languages across it</div></div>
+  </div>
+
+  <div class="case-links">
+    <a href="https://github.com/Fatorin/ghostpp-rs">→ ghostpp-rs</a>
+    <a href="https://github.com/Fatorin/bn_manager">→ bn_manager</a>
+    <a href="https://github.com/Fatorin/pvpgn-hash-rs">→ pvpgn-hash-rs</a>
+  </div>
+</div></section>
+
+<!-- ================= Side projects ================= -->
+<section class="case" id="side-projects"><div class="wrap">
+  <span class="tag"><span class="dot"></span>Side projects · self-directed</span>
+  <h2>Two answers to the same question</h2>
+  <div class="sub">
+    <span class="l-en">Two systems built back to back, deliberately on opposite sides of the concurrency trade-off — and measured until the numbers were defensible.</span>
+    <span class="l-zh">兩套接連做完的系統，刻意站在併發取捨的兩端——並且量到數字站得住腳為止。</span>
+    <span class="l-ja">続けて作った2つのシステム。並行性のトレードオフで意図的に正反対の側に立たせ、数字が説明に耐えるまで測りました。</span>
+  </div>
+
+  <div class="spec">
+    <div><div class="k">Role</div><div class="v">
+      <span class="l-en">Solo — spec, build, deploy, measure</span>
+      <span class="l-zh">獨立完成：規格、實作、部署、量測</span>
+      <span class="l-ja">単独 — 仕様・実装・デプロイ・計測</span>
+    </div></div>
+    <div><div class="k">Stack</div><div class="v">Rust · Tokio · .NET 10 · Kafka · Redis · etcd · RKE2 · Proxmox</div></div>
+    <div><div class="k">Verified on</div><div class="v">
+      <span class="l-en">A 5-node RKE2 cluster I built myself</span>
+      <span class="l-zh">自己架的 5 節點 RKE2 叢集</span>
+      <span class="l-ja">自分で構築した5ノードの RKE2 クラスタ</span>
+    </div></div>
+  </div>
+
+  <p>
+    <span class="l-en">A matching engine and a flash-sale system look like the same problem from a distance: far more requests than inventory, arriving all at once. They are not. One cannot afford to lose a single order and must be able to prove it; the other only has to never sell the same item twice, and can repair the rest afterwards. I built both, on purpose, to see where the line between them actually falls.</span>
+    <span class="l-zh">撮合引擎和秒殺系統，遠看像同一個問題：請求遠多於庫存，而且同時湧入。其實不是。前者一筆訂單都不能掉，而且必須能證明；後者只要保證同一件商品不賣兩次，其餘的事後修補即可。我刻意兩個都做，就是想看清楚這條界線到底畫在哪裡。</span>
+    <span class="l-ja">マッチングエンジンとフラッシュセールは、遠目には同じ問題に見えます。在庫をはるかに超えるリクエストが一斉に届く。しかし違います。前者は一件の注文も失えず、失っていないことを証明できなければならない。後者は同じ商品を二度売らなければよく、残りは後から直せる。その境界が実際どこにあるのかを見るために、意図的に両方を作りました。</span>
+  </p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 860 316" role="img" aria-label="matching-engine and seckill compared across three design decisions">
+      <style>
+        .sbxh { fill:#EAF1F0; stroke:#2F6F6A; stroke-width:1.8; }
+        .sbx { fill:#F5F7F6; stroke:#2F6F6A; stroke-width:1.2; }
+        .slb { font-family:"IBM Plex Mono",monospace; font-size:12.5px; fill:#17211F; }
+        .ssm { font-family:"IBM Plex Mono",monospace; font-size:10.5px; fill:#5D6E6B; }
+        .sband { fill:none; stroke:#8FADA9; stroke-width:1.1; stroke-dasharray:3 3; }
+      </style>
+
+      <rect class="sbxh" x="15" y="14" width="400" height="56" rx="6"/>
+      <text class="slb" x="215" y="39" text-anchor="middle">matching-engine — rust</text>
+      <text class="ssm" x="215" y="56" text-anchor="middle">strict consistency, determinism, microseconds</text>
+
+      <rect class="sbxh" x="445" y="14" width="400" height="56" rx="6"/>
+      <text class="slb" x="645" y="39" text-anchor="middle">seckill — .net 10</text>
+      <text class="ssm" x="645" y="56" text-anchor="middle">throughput first, repair the rest afterwards</text>
+
+      <rect class="sbx" x="15" y="88" width="400" height="52" rx="6"/>
+      <text class="slb" x="35" y="110">single writer per symbol</text>
+      <text class="ssm" x="35" y="127">one thread, everything fully ordered</text>
+
+      <rect class="sbx" x="445" y="88" width="400" height="52" rx="6"/>
+      <text class="slb" x="465" y="110">hot path touches redis + kafka only</text>
+      <text class="ssm" x="465" y="127">202 returns immediately, db write is async</text>
+
+      <rect class="sbx" x="15" y="152" width="400" height="52" rx="6"/>
+      <text class="slb" x="35" y="174">ack only after fsync + replication</text>
+      <text class="ssm" x="35" y="191">durability first, latency second</text>
+
+      <rect class="sbx" x="445" y="152" width="400" height="52" rx="6"/>
+      <text class="slb" x="465" y="174">redis data plane, etcd control plane</text>
+      <text class="ssm" x="465" y="191">separate failure domains</text>
+
+      <rect class="sbx" x="15" y="216" width="400" height="52" rx="6"/>
+      <text class="slb" x="35" y="238">deterministic WAL replay</text>
+      <text class="ssm" x="35" y="255">same input, same state, every time</text>
+
+      <rect class="sbx" x="445" y="216" width="400" height="52" rx="6"/>
+      <text class="slb" x="465" y="238">reconciliation repairs the drift</text>
+      <text class="ssm" x="465" y="255">best effort, then audited to zero</text>
+
+      <rect class="sband" x="15" y="280" width="830" height="30" rx="6"/>
+      <text class="ssm" x="430" y="299" text-anchor="middle">both deployed to the same self-built proxmox + rke2 cluster, then put through chaos — reconciliation has to come out at zero</text>
+    </svg>
+    <figcaption>same shape of load, opposite answers — and both had to prove it</figcaption>
+  </figure>
+
+  <h3>
+    <span class="l-en">Decisions that mattered</span>
+    <span class="l-zh">關鍵決策</span>
+    <span class="l-ja">重要だった意思決定</span>
+  </h3>
+  <ul class="decisions">
+    <li>
+      <span class="l-en"><b>Correctness before speed, in both.</b> The matching engine acknowledges an order only after it is on disk and replicated, and replays its write-ahead log to a byte-identical state. The flash-sale system never oversold across 300,000 requests with pods being killed at random, verified three separate ways — HTTP responses, database rows, and a ledger reconciliation. Those two guarantees were fixed before any optimisation started, and neither was relaxed.</span>
+      <span class="l-zh"><b>兩邊都是正確性優先於速度。</b>撮合引擎只有在訂單落盤且完成複製後才回 ack，並能把 WAL 重放成位元完全相同的狀態。秒殺系統在 30 萬請求、隨機殺 pod 的情況下零超賣，並以三種方式交叉驗證——HTTP 回應、資料庫紀錄、帳目對帳。這兩條保證在任何優化開始前就先定死，過程中都沒有放寬。</span>
+      <span class="l-ja"><b>どちらも、速度より先に正しさ。</b>マッチングエンジンは注文がディスクに載り複製されて初めて ack を返し、WAL を再生してバイト単位で同一の状態に戻せます。フラッシュセールは30万リクエスト＋ランダムな pod 停止のもとで売り越しゼロ、HTTP 応答・DB 行・帳簿照合の三系統で検証しました。この2つの保証は最適化に着手する前に固定し、最後まで緩めていません。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>The cluster is mine too.</b> Neither project ran on managed infrastructure. I stood up Proxmox VE, cut five virtual machines at four vCPUs each, and installed RKE2 across them — so CPU limits, CNI behaviour, storage classes and node failure were all things I configured rather than things handed to me. That is also why the ceilings in this section are honest: when the flash-sale system stalled around 12,000 RPS, I could tell it was the cluster's network and not the application.</span>
+      <span class="l-zh"><b>叢集也是我自己架的。</b>兩個專案都沒有跑在託管的基礎設施上。我自己裝了 Proxmox VE，切出五台四核虛擬機，在上面安裝 RKE2——所以 CPU 限制、CNI 行為、storage class、節點故障，全都是我設定出來的，而不是別人給我的。這也是為什麼這一節的天花板是誠實的：秒殺系統卡在 12,000 RPS 左右時，我能判斷那是叢集的網路，而不是應用程式。</span>
+      <span class="l-ja"><b>クラスタも自分で立てた。</b>どちらのプロジェクトもマネージドインフラでは動かしていません。Proxmox VE を構築し、4 vCPU の仮想マシンを5台切り出し、その上に RKE2 を導入しました。CPU 制限、CNI の挙動、ストレージクラス、ノード障害——すべて与えられたものではなく、自分で設定したものです。この節の天井が正直である理由もそこにあります。フラッシュセールが 12,000 RPS 付近で頭打ちになったとき、それがアプリではなくクラスタのネットワークだと判断できました。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Every pitfall I hit is written down.</b> Both repos keep a running log of what broke, what it actually turned out to be, and what changed. A few entries: a journal writer spinning on <span class="mono">yield_now()</span> quietly burned a full core, which only surfaced once the container had a 1-CPU limit — throughput went from 431/s to 2,097/s once fixed. PID 1 in a container ignores <span class="mono">SIGTERM</span> without an installed handler, which made failover 30 seconds slower. A Kafka volume mounted one directory too high got its topics wiped on every restart. The market-data service didn't follow leader election, so it sat on the hot standby looking perfectly healthy while its order book never moved.</span>
+      <span class="l-zh"><b>每一個踩到的坑都寫下來。</b>兩個 repo 裡都留著一份紀錄：壞在哪、最後查出來是什麼、改了什麼。其中幾則：journal writer 在 <span class="mono">yield_now()</span> 上空轉，安靜地燒掉一整顆 CPU——只有在容器被限制成 1 CPU 時才會浮現，修好後吞吐從 431/s 變成 2,097/s。容器裡的 PID 1 沒有安裝 handler 就會忽略 <span class="mono">SIGTERM</span>，害 failover 慢了 30 秒。Kafka 的 volume 掛在 log 目錄的上一層，每次重啟 topic 全部消失。行情服務不跟隨選主，安靜地黏在熱備上——看起來一切健康，但盤口永遠不動。</span>
+      <span class="l-ja"><b>踏んだ落とし穴は、すべて書き残す。</b>どちらのリポジトリにも、何が壊れ、原因は結局何で、何を変えたのかの記録を残しています。いくつか挙げると——journal writer が <span class="mono">yield_now()</span> で空回りし、CPU を1コア丸ごと焼いていました。コンテナが 1 CPU 制限のときだけ顕在化し、修正後はスループットが 431/s から 2,097/s へ。コンテナの PID 1 はハンドラ未登録の <span class="mono">SIGTERM</span> を無視するため、フェイルオーバーが30秒遅れました。Kafka のボリュームがログディレクトリの一階層上にマウントされており、再起動のたびにトピックが消えていました。市況サービスがリーダー選出に追従せず、ホットスタンバイに張り付いたまま——健全に見えるのに板が一切動かない。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Two targets went unmet, and I wrote that down instead of moving them.</b> The matching engine hit its throughput and p99 goals but missed p99.9 and LAN p99, so the milestone stayed untagged and the reasons are in the perf doc. The flash-sale system aimed for 30,000 RPS and found the cluster's network ceiling at around 12,000 — a hardware limit, not an application one — so the capacity claim was rechecked as RPS-per-vCPU with extrapolation points rather than quietly restated. A number you had to move is worth less than the reason it wouldn't move.</span>
+      <span class="l-zh"><b>有兩項目標沒達成，我把它寫下來，而不是把標準移過去。</b>撮合引擎的吞吐與 p99 都達標，但 p99.9 與區網 p99 沒過，所以那個里程碑就不打 tag，原因寫在效能文件裡。秒殺系統原訂 30,000 RPS，實測發現叢集的網路上限約 12,000——那是硬體天花板而不是應用瓶頸——於是容量口徑改成「每 vCPU RPS + 外推驗證點」，而不是安靜地換個說法。一個被移動過的數字，價值遠低於它為什麼移不動的理由。</span>
+      <span class="l-ja"><b>未達の目標が2つあり、基準を動かす代わりに書き残した。</b>マッチングエンジンはスループットと p99 は達成、p99.9 と LAN p99 は未達だったため、マイルストーンにタグは打たず、理由を性能ドキュメントに残しました。フラッシュセールは 30,000 RPS を目標としましたが、クラスタのネットワーク上限が約 12,000 —— アプリではなくハードウェアの天井 —— と判明したため、容量の指標を「vCPU あたり RPS ＋ 外挿の検証点」に取り直しました。黙って言い換えることはしていません。動かした数字より、動かなかった理由のほうが価値があります。</span>
+    </li>
+  </ul>
+
+  <div class="outcomes">
+    <div class="outcome"><div class="n">6.39 µs</div><div class="l">matching p99, worst run</div></div>
+    <div class="outcome"><div class="n">2.59 s</div><div class="l">kill -9 takeover, zero loss</div></div>
+    <div class="outcome"><div class="n">0</div><div class="l">oversold in 300k requests</div></div>
+    <div class="outcome"><div class="n">108,001</div><div class="l">concurrent sse connections</div></div>
+  </div>
+
+  <div class="case-links">
+    <a href="https://github.com/Fatorin/matching-engine">→ matching-engine</a>
+    <a href="https://github.com/Fatorin/seckill">→ seckill</a>
+  </div>
+</div></section>
+
+<!-- ================= Also built ================= -->
+<section class="case" id="also"><div class="wrap">
+  <span class="tag"><span class="dot"></span>Smaller work</span>
+  <h2>Also built</h2>
+  <div class="sub">
+    <span class="l-en">Some of this has no public repo to link. Each is here for one decision worth describing.</span>
+    <span class="l-zh">有些東西沒有可以公開的 repo。放在這裡是因為它們各有一個值得講的決策。</span>
+    <span class="l-ja">公開リポジトリのないものもあります。それぞれ、語る価値のある判断がひとつあるので挙げています。</span>
+  </div>
+
+  <ul class="decisions">
+    <li>
+      <span class="l-en"><b>A lottery-draw display, in Tauri 2.</b> The control panel and the display board are two separate OS windows, so a stream can capture the board alone and the operator's clicks never appear on camera. Both windows render from one source of truth held in Rust and broadcast on a state event, which means the operator's preview and what the audience sees can never drift apart.</span>
+      <span class="l-zh"><b>樂透開獎顯示器，用 Tauri 2 做的。</b>控制台與顯示盤是兩個獨立的作業系統視窗，所以直播只要擷取顯示視窗，操作過程不會入鏡。兩個視窗都從 Rust 端唯一的真相來源渲染，變更透過狀態事件廣播——操作者看到的預覽與觀眾看到的畫面不可能不一致。</span>
+      <span class="l-ja"><b>抽選番号ディスプレイ、Tauri 2 製。</b>操作パネルと表示ボードは別々の OS ウィンドウなので、配信では表示ウィンドウだけを取り込めば、操作の様子は画面に映りません。両ウィンドウは Rust 側に置いた唯一の真実からレンダリングされ、変更は状態イベントで配信されます。操作者のプレビューと観客の画面がずれることはありません。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>A streamer's site with a CMS underneath it.</b> Go backend on MySQL and Redis, Next.js front end. The site shows the channel's emotes, cheermotes and badges, but the request path never calls Twitch: a scheduled job refreshes them into Redis and the endpoints read from cache only, so a Twitch outage can't take the page down with it. The admin side is the other half — rather than hard-coding the pages, I built a small content editor so every block and every string can be edited per language without a deploy.</span>
+      <span class="l-zh"><b>一個實況主的網站，底下是自己做的 CMS。</b>Go 後端接 MySQL 與 Redis，前端是 Next.js。網站會顯示頻道的表情符號、歡呼圖示與徽章，但請求路徑完全不會去打 Twitch：排程工作定期把資料刷進 Redis，端點只從快取讀，所以 Twitch 掛掉不會把頁面一起拖下水。另一半是後台——我沒有把頁面寫死，而是做了一套小型內容編輯器，每個區塊、每段文字都能分語言編輯，不用重新部署。</span>
+      <span class="l-ja"><b>配信者のサイトと、その下の自作 CMS。</b>Go のバックエンドが MySQL と Redis を扱い、フロントは Next.js。サイトはチャンネルのエモート、チアモート、バッジを表示しますが、リクエスト経路から Twitch を叩くことはありません。定期ジョブが Redis に反映し、エンドポイントはキャッシュのみを読むため、Twitch の障害がページを道連れにすることがありません。もう半分は管理画面で、ページを直書きせず小さなコンテンツエディタを作ったため、各ブロック・各文言を言語ごとにデプロイなしで編集できます。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Contributions to other projects.</b> A dead-code removal in <span class="mono">apache/kafka</span>; an allow-list addition in <span class="mono">apache/infrastructure-actions</span> so ASF repos can use NuGet's login action; .NET 10 support for the <span class="mono">NuGetForUnity</span> CLI; and seven Traditional Chinese localisation pull requests for a Hearthstone deck tracker.</span>
+      <span class="l-zh"><b>其他專案貢獻。</b><span class="mono">apache/kafka</span> 的死碼移除；替 <span class="mono">apache/infrastructure-actions</span> 加上允許清單，讓 ASF 專案能使用 NuGet 的 login action；替 <span class="mono">NuGetForUnity</span> 的 CLI 加上 .NET 10 支援；以及一個爐石卡組追蹤器的七個正體中文在地化 PR。</span>
+      <span class="l-ja"><b>他プロジェクトへの貢献。</b><span class="mono">apache/kafka</span> の未使用コード削除、<span class="mono">apache/infrastructure-actions</span> への許可リスト追加（ASF リポジトリが NuGet の login アクションを使えるように）、<span class="mono">NuGetForUnity</span> CLI の .NET 10 対応、そして Hearthstone デッキトラッカーの繁体字中国語ローカライズ7件。</span>
+    </li>
+  </ul>
+
+  <div class="case-links">
+    <a href="https://github.com/Fatorin">→ everything else on GitHub</a>
+  </div>
+</div></section>
+
+</div>
+
+<!-- ================= About ================= -->
+<section class="about" id="about"><div class="wrap">
+  <h3>
+    <span class="l-en">About</span>
+    <span class="l-zh">關於我</span>
+    <span class="l-ja">自己紹介</span>
+  </h3>
+  <p>
+    <span class="l-en">I'm a software engineer who loves games. My career started in QA, testing games other people had made — and it was there that I started wanting to build the one I had in my head, which is what moved me into development.</span>
+    <span class="l-zh">一個熱愛遊戲的軟體工程師。我的職涯從 QA 開始，測試別人做出來的遊戲——也是在那段時間裡，我開始想做出心目中的那一款，於是走向開發。</span>
+    <span class="l-ja">ゲームが好きなソフトウェアエンジニアです。キャリアは QA から始まり、他の人が作ったゲームをテストしていました。その日々のなかで、自分の思い描く一本を作りたいと思うようになり、開発の側へ移りました。</span>
+  </p>
+  <p>
+    <span class="l-en">From QA to engineering and on to today, I've kept learning and kept sharpening what I can build.</span>
+    <span class="l-zh">從 QA 到 RD 到現在，我也持續不斷學習並加強自己的技術。</span>
+    <span class="l-ja">QA から開発へ、そして今に至るまで、学び続け、技術を磨き続けています。</span>
+  </p>
+  <p>
+    <span class="l-en">What I'm working towards is specific: a game tens of thousands of people can play at the same time, and the high-concurrency, high-traffic systems that hold it up.</span>
+    <span class="l-zh">我想做到的事很具體：做出能讓數萬人同時遊玩的遊戲，以及撐得住它的高併發、高流量系統。</span>
+    <span class="l-ja">目指しているものははっきりしています。数万人が同時に遊べるゲームと、それを支える高並行・高トラフィックなシステムです。</span>
+  </p>
+  <div class="kv">
+    <div class="kk">Skills</div>
+    <div class="vv">C# (.NET) · Rust · PostgreSQL · Redis · Docker · Kubernetes · GitHub Actions · GitLab CI/CD · AWS · GCP · Claude · Codex</div>
+  </div>
+  <div class="kv">
+    <div class="kk">Languages</div>
+    <div class="vv">中文 · English · 日本語 (JLPT N1)</div>
+  </div>
+</div></section>
+
+<footer><div class="wrap footrow">
+  <span>© 2026 Hsu, Chen Lin</span>
+  <span><a href="https://github.com/Fatorin">github</a> · <a href="mailto:sksly789@gmail.com">email</a></span>
+</div></footer>
+
+<script>
+(function () {
+  var html = document.documentElement;
+  var buttons = document.querySelectorAll('[data-setlang]');
+  function apply(lang) {
+    html.dataset.lang = lang;
+    html.setAttribute('lang', lang === 'zh' ? 'zh-Hant' : lang);
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', b.dataset.setlang === lang ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.dataset.setlang); });
+  });
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  if (saved === 'en' || saved === 'zh' || saved === 'ja') {
+    apply(saved);
+  } else {
+    var nav = (navigator.language || 'en').toLowerCase();
+    if (nav.indexOf('zh') === 0) apply('zh');
+    else if (nav.indexOf('ja') === 0) apply('ja');
+    else apply('en');
+  }
+})();
+</script>
+
+</body>
+</html>
