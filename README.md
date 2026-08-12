@@ -1,6 +1,6 @@
 # fatorin.github.io
 
-Personal portfolio — Hsu, Chen Lin (Rin), backend engineer in Taipei.
+Personal portfolio — Rin Hsu, backend engineer in Taipei.
 
 **Live:** https://fatorin.github.io/
 
@@ -12,7 +12,8 @@ Available in English, 正體中文 and 日本語 via the switcher in the nav.
 
 | file | purpose |
 | --- | --- |
-| `index.html` | the entire site |
+| `index.html` | the portfolio — case studies |
+| `resume.html` | the résumé; carries a print stylesheet, so Print → Save as PDF gives a clean two-page document |
 | `404.html` | not-found page, same styling |
 | `icon.png` | avatar, 800×800 — also the Open Graph preview image |
 | `favicon-32.png`, `favicon-180.png` | tab icons, cropped to the face so it reads small |

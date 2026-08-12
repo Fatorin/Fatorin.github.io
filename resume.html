@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Résumé — Rin Hsu</title>
+<meta name="description" content="Résumé of Rin Hsu — backend engineer in Taipei. Game servers, cloud infrastructure, high-concurrency systems. Apache OpenDAL Committer.">
+<link rel="canonical" href="https://fatorin.github.io/resume.html">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-180.png" sizes="180x180" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#2F6F6A">
+
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://fatorin.github.io/resume.html">
+<meta property="og:title" content="Résumé — Rin Hsu">
+<meta property="og:description" content="Backend engineer in Taipei. Game servers, cloud infrastructure, high-concurrency systems. Apache OpenDAL Committer.">
+<meta property="og:image" content="https://fatorin.github.io/icon.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fatorin.github.io/icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F5F7F6;
+  --panel: #FDFEFD;
+  --ink: #17211F;
+  --body: #33403D;
+  --muted: #5D6E6B;
+  --teal: #2F6F6A;
+  --pine: #1C4743;
+  --line: #D4DDDB;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  background: var(--paper);
+  color: var(--body);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+html[data-lang="zh"] body { font-family: "IBM Plex Sans", "Noto Sans TC", sans-serif; line-height: 1.78; }
+html[data-lang="ja"] body { font-family: "IBM Plex Sans", "Noto Sans JP", sans-serif; line-height: 1.78; }
+
+html[data-lang="en"] .l-zh, html[data-lang="en"] .l-ja { display: none !important; }
+html[data-lang="zh"] .l-en, html[data-lang="zh"] .l-ja { display: none !important; }
+html[data-lang="ja"] .l-en, html[data-lang="ja"] .l-zh { display: none !important; }
+
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+a { color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color .15s; }
+a:hover { border-color: var(--teal); }
+a:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 2px; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+
+/* ---------- Nav ---------- */
+nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.navrow { display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 14px; }
+.navname { font-family: "Space Grotesk", sans-serif; font-weight: 700; color: var(--ink); font-size: 15px; letter-spacing: .02em; border: none; }
+.navright { display: flex; align-items: center; gap: 18px; }
+.navlinks a { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); border: none; margin-left: 18px; letter-spacing: .04em; }
+.navlinks a:hover { color: var(--teal); }
+.langsw { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.langsw button {
+  font-family: "IBM Plex Mono", monospace; font-size: 11.5px;
+  background: transparent; border: none; color: var(--muted);
+  padding: 5px 11px; cursor: pointer; letter-spacing: .03em;
+}
+.langsw button + button { border-left: 1px solid var(--line); }
+.langsw button[aria-pressed="true"] { background: var(--teal); color: #fff; }
+.langsw button:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+
+/* ---------- Head ---------- */
+.rhead { padding: 54px 0 26px; }
+.rname {
+  font-family: "Space Grotesk", "Noto Sans TC", "Noto Sans JP", sans-serif;
+  font-weight: 700; color: var(--ink);
+  font-size: clamp(30px, 4.4vw, 40px);
+  line-height: 1.14; letter-spacing: -0.015em;
+}
+.rrole {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--teal); margin-top: 10px;
+}
+.rcontact {
+  font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted);
+  margin-top: 14px; display: flex; gap: 8px 18px; flex-wrap: wrap;
+}
+.rcontact a { border-bottom-color: transparent; }
+.rcontact a:hover { border-bottom-color: var(--teal); }
+
+/* ---------- Sections ---------- */
+section.block { padding: 26px 0; border-top: 1px solid var(--line); }
+h2 {
+  font-family: "Space Grotesk", "Noto Sans TC", "Noto Sans JP", sans-serif;
+  font-weight: 500; color: var(--pine); font-size: 13px;
+  letter-spacing: .16em; text-transform: uppercase; margin-bottom: 16px;
+}
+.summary { max-width: 46em; }
+
+/* key/value rows (highlights, skills) */
+.kv { display: flex; gap: 18px; align-items: baseline; margin-bottom: 10px; }
+.kv .kk {
+  font-family: "IBM Plex Mono", monospace; font-size: 10.5px;
+  letter-spacing: .13em; text-transform: uppercase; color: var(--muted);
+  flex: 0 0 118px; padding-top: 3px;
+}
+.kv .vv { flex: 1; font-size: 14.5px; }
+
+/* jobs */
+.job { margin-bottom: 26px; break-inside: avoid; }
+.job:last-child { margin-bottom: 0; }
+.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.job-title {
+  font-family: "Space Grotesk", "Noto Sans TC", "Noto Sans JP", sans-serif;
+  font-weight: 700; color: var(--ink); font-size: 17px; letter-spacing: -0.005em;
+}
+.job-title .co { color: var(--teal); font-weight: 500; }
+.job-when { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+.job-sum { margin-top: 5px; color: var(--muted); font-size: 14.5px; max-width: 46em; }
+ul.pts { list-style: none; margin-top: 10px; max-width: 47em; }
+ul.pts li { position: relative; padding-left: 18px; margin-bottom: 6px; }
+ul.pts li::before {
+  content: ""; position: absolute; left: 1px; top: 11px;
+  width: 7px; height: 2px; background: var(--teal);
+}
+ul.pts b { color: var(--ink); font-weight: 600; }
+.stack {
+  font-family: "IBM Plex Mono", monospace; font-size: 11.5px;
+  color: var(--muted); margin-top: 9px; line-height: 1.65; max-width: 47em;
+}
+
+.edu-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.edu-name { color: var(--ink); font-weight: 500; }
+
+.note {
+  font-family: "IBM Plex Mono", monospace; font-size: 12.5px;
+  color: var(--muted); margin-top: 4px;
+}
+
+footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
+.footrow {
+  font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--muted);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+}
+.footrow a { border: none; color: var(--muted); }
+.footrow a:hover { color: var(--teal); }
+
+@media (max-width: 640px) {
+  .navlinks { display: none; }
+  .kv { display: block; }
+  .kv .kk { margin-bottom: 3px; }
+  .rhead { padding: 40px 0 22px; }
+}
+
+/* ---------- Print ---------- */
+@page { margin: 13mm 14mm; }
+@media print {
+  nav, footer, .screen-only { display: none !important; }
+  html, body { background: #fff; color: #000; font-size: 10.2pt; line-height: 1.42; }
+  html[data-lang="zh"] body, html[data-lang="ja"] body { line-height: 1.55; }
+  a { color: #000; border-bottom: none; }
+  .wrap { max-width: none; padding: 0; }
+  .rhead { padding: 0 0 10px; }
+  .rname { font-size: 21pt; }
+  .rrole { font-size: 9pt; margin-top: 5px; color: #000; }
+  .rcontact { font-size: 9pt; margin-top: 7px; color: #000; }
+  section.block { padding: 10px 0 0; border-top: 0.6pt solid #999; }
+  h2 { font-size: 8.6pt; margin-bottom: 8px; color: #000; }
+  .job { margin-bottom: 12px; }
+  .job-title { font-size: 11pt; }
+  .job-title .co { color: #000; }
+  .job-when, .job-sum, .stack, .kv .kk, .kv .vv, .note { color: #000; }
+  .job-when { font-size: 8.6pt; }
+  .job-sum { font-size: 9.4pt; margin-top: 3px; }
+  ul.pts { margin-top: 6px; }
+  ul.pts li { margin-bottom: 3px; }
+  ul.pts li::before { background: #000; }
+  .stack { font-size: 8.2pt; margin-top: 5px; }
+  .kv { margin-bottom: 6px; }
+  .kv .vv { font-size: 9.4pt; }
+  .summary { font-size: 9.6pt; }
+}
+</style>
+</head>
+<body>
+
+<nav class="screen-only"><div class="wrap navrow">
+  <a class="navname" href="/">rin.hsu</a>
+  <span class="navright">
+    <span class="navlinks">
+      <a href="/">← portfolio</a><a href="#experience">experience</a><a href="#skills">skills</a>
+    </span>
+    <span class="langsw" role="group" aria-label="Language">
+      <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+      <button type="button" data-setlang="zh" aria-pressed="false">中文</button>
+      <button type="button" data-setlang="ja" aria-pressed="false">日本語</button>
+    </span>
+  </span>
+</div></nav>
+
+<header class="rhead"><div class="wrap">
+  <div class="rname">Rin <span style="color:var(--teal)">Hsu</span></div>
+  <div class="rrole">
+    <span class="l-en">Backend Engineer · Taipei, Taiwan</span>
+    <span class="l-zh">後端工程師 · 台北，台灣</span>
+    <span class="l-ja">バックエンドエンジニア · 台北, 台湾</span>
+  </div>
+  <div class="rcontact">
+    <span><a href="mailto:sksly789@gmail.com">sksly789@gmail.com</a></span>
+    <span><a href="https://github.com/Fatorin">github.com/Fatorin</a></span>
+    <span><a href="https://fatorin.github.io/">fatorin.github.io</a></span>
+  </div>
+</div></header>
+
+<section class="block"><div class="wrap">
+  <h2>
+    <span class="l-en">Summary</span>
+    <span class="l-zh">關於我</span>
+    <span class="l-ja">概要</span>
+  </h2>
+  <p class="summary">
+    <span class="l-en">Backend engineer with just over five years building game servers, cloud infrastructure and high-concurrency systems, after two and a half years in game QA. That start still shapes how I design: I reason from failure modes, edge cases and observability rather than the happy path. I work primarily in C# / .NET and Rust, and pick the stack that fits the problem.</span>
+    <span class="l-zh">後端工程師，五年多的開發經驗，專注於遊戲伺服器、雲端架構與高併發系統；在此之前有兩年半的遊戲 QA 經歷。那個起點至今仍影響我的設計方式——我習慣從失敗情境、邊界條件與可觀測性反推，而不是只顧著讓正常流程跑通。主要使用 C# / .NET 與 Rust，並依專案需求選擇合適的技術棧。</span>
+    <span class="l-ja">ゲームサーバー、クラウド基盤、高並行システムの開発に5年あまり。その前に2年半のゲーム QA 経験があります。この出発点は今も設計の仕方に表れていて、正常系よりも先に障害モード・境界条件・可観測性から考えます。主に C# / .NET と Rust を使い、課題に合った技術を選びます。</span>
+  </p>
+
+  <div style="margin-top:18px">
+    <div class="kv">
+      <div class="kk">
+        <span class="l-en">Backend</span><span class="l-zh">後端 / 架構</span><span class="l-ja">バックエンド</span>
+      </div>
+      <div class="vv">
+        <span class="l-en">C# (.NET), Rust, PostgreSQL, Redis, Docker; self-built OIDC identity provider (OpenIddict), payment integration, profiling and tuning under high-concurrency load</span>
+        <span class="l-zh">C# (.NET)、Rust、PostgreSQL、Redis、Docker；自建 OIDC 身分驗證（OpenIddict）、金流串接、高併發情境下的瓶頸分析與調校</span>
+        <span class="l-ja">C# (.NET)、Rust、PostgreSQL、Redis、Docker、OIDC 認証基盤の自作（OpenIddict）、決済連携、高並行下でのボトルネック分析とチューニング</span>
+      </div>
+    </div>
+    <div class="kv">
+      <div class="kk">
+        <span class="l-en">Infrastructure</span><span class="l-zh">雲端 / 維運</span><span class="l-ja">インフラ</span>
+      </div>
+      <div class="vv">
+        <span class="l-en">AWS architecture and cost optimisation, CI/CD design; a self-built Proxmox VE environment running an RKE2 high-availability Kubernetes cluster</span>
+        <span class="l-zh">AWS 架構規劃與成本最佳化、CI/CD 建置與流程改善；自建 Proxmox VE 環境與 RKE2 高可用 Kubernetes 叢集</span>
+        <span class="l-ja">AWS のアーキテクチャ設計とコスト最適化、CI/CD の構築と改善、自前の Proxmox VE 環境上に RKE2 の高可用 Kubernetes クラスタを構築</span>
+      </div>
+    </div>
+    <div class="kv">
+      <div class="kk">
+        <span class="l-en">Open source</span><span class="l-zh">開源貢獻</span><span class="l-ja">オープンソース</span>
+      </div>
+      <div class="vv">
+        <span class="l-en">Apache OpenDAL Committer — I implement the .NET binding, working across the Rust ↔ C# FFI / interop layer</span>
+        <span class="l-zh">Apache OpenDAL Committer——實作 .NET Binding，負責 Rust 與 C# 之間的 FFI／Interop</span>
+        <span class="l-ja">Apache OpenDAL Committer —— .NET バインディングを実装し、Rust と C# の FFI／Interop 層を担当</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="block" id="experience"><div class="wrap">
+  <h2>
+    <span class="l-en">Experience</span>
+    <span class="l-zh">工作經驗</span>
+    <span class="l-ja">職務経歴</span>
+  </h2>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">
+        <span class="l-en">Game Engineer <span class="co">· Macaca Games</span></span>
+        <span class="l-zh">遊戲工程師 <span class="co">· 玩猴遊戲 Macaca Games</span></span>
+        <span class="l-ja">ゲームエンジニア <span class="co">· Macaca Games</span></span>
+      </div>
+      <div class="job-when">2025.05 – 2026.06</div>
+    </div>
+    <div class="job-sum">
+      <span class="l-en">Gameplay UI and backend API integration for a live commercial title.</span>
+      <span class="l-zh">商業遊戲專案的 UI 實作與後端 API 串接。</span>
+      <span class="l-ja">商業タイトルのゲーム UI 実装とバックエンド API 連携。</span>
+    </div>
+    <ul class="pts">
+      <li>
+        <span class="l-en"><b>Tripled login throughput (~3× RPS)</b> by profiling the login path and restructuring API call ordering and request batching to eliminate head-of-line blocking.</span>
+        <span class="l-zh"><b>登入吞吐提升約 3 倍（RPS）</b>——分析登入流程瓶頸與請求阻塞，重新設計 API 呼叫順序與批次處理，消除 head-of-line blocking。</span>
+        <span class="l-ja"><b>ログインのスループットを約3倍（RPS）に。</b>ログイン経路をプロファイリングし、API 呼び出し順序とリクエストのバッチ化を再設計して head-of-line blocking を解消。</span>
+      </li>
+      <li>
+        <span class="l-en"><b>Cut asset I/O operations by ~50%</b> with a custom Addressables pipeline that keeps bundles encrypted while allowing direct file reads after unpacking.</span>
+        <span class="l-zh"><b>資產 I/O 次數減少約 50%</b>——客製化 Addressables 流程，讓 bundle 維持加密且解包後可直接讀取檔案。</span>
+        <span class="l-ja"><b>アセットの I/O 回数を約50%削減。</b>Addressables のパイプラインをカスタムし、バンドルを暗号化したまま展開後は直接ファイル読み取りを可能に。</span>
+      </li>
+      <li>
+        <span class="l-en"><b>Trimmed 80 MB from the main bundle</b> by extending ViewSystem, the company's open-source UI framework, to resolve asset-loading issues.</span>
+        <span class="l-zh"><b>主要包體縮減 80 MB</b>——擴充公司開源專案 ViewSystem，解決資源載入問題。</span>
+        <span class="l-ja"><b>メインバンドルを 80 MB 削減。</b>社のオープンソース UI フレームワーク ViewSystem を拡張し、アセット読み込みの問題を解消。</span>
+      </li>
+      <li>
+        <span class="l-en"><b>Reduced GitLab Runner build times by ~70%</b> for server-side images using sparse-checkout.</span>
+        <span class="l-zh"><b>GitLab Runner 建置時間減少約 70%</b>——以 sparse-checkout 改善 server-side image 的建置流程。</span>
+        <span class="l-ja"><b>GitLab Runner のビルド時間を約70%短縮。</b>sparse-checkout によりサーバーサイドイメージのビルドを改善。</span>
+      </li>
+      <li>
+        <span class="l-en">Fixed out-of-memory crashes on low-spec iOS devices, restoring playability across the long tail of supported hardware.</span>
+        <span class="l-zh">排除低記憶體 iOS 裝置的閃退問題，恢復低階機種的可玩性。</span>
+        <span class="l-ja">低スペック iOS 端末のメモリ不足によるクラッシュを解消し、下位機種でのプレイ可能性を回復。</span>
+      </li>
+      <li>
+        <span class="l-en">Rebuilt internal art tooling, raising art pipeline throughput by over 30%; partnered with the client's SRE team on cloud deployment, monitoring and observability.</span>
+        <span class="l-zh">重構美術個人化工具，作業效率提升 30% 以上；與業主 SRE 團隊協作完成雲端部署、監控與效能觀測。</span>
+        <span class="l-ja">アート向け内製ツールを作り直し、作業効率を30%以上向上。クライアントの SRE チームと協働し、クラウド展開・監視・可観測性を担当。</span>
+      </li>
+    </ul>
+    <div class="stack">C# (Unity) · PostgreSQL · Redis · GCP · GitLab · Codex · Claude</div>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">
+        <span class="l-en">Backend Engineer <span class="co">· Ninth Trading Co.</span></span>
+        <span class="l-zh">後端工程師 <span class="co">· 第九商行</span></span>
+        <span class="l-ja">バックエンドエンジニア <span class="co">· Ninth Trading Co.</span></span>
+      </div>
+      <div class="job-when">2022.10 – 2025.02</div>
+    </div>
+    <div class="job-sum">
+      <span class="l-en">Sole backend owner for <b>ArcadeGalaxy</b> — architecture, deployment and operations. Delivered 10 game systems from producer and designer specs.</span>
+      <span class="l-zh"><b>ArcadeGalaxy</b> 的唯一後端負責人——架構、部署與維運；依企劃與製作人需求交付 10 項遊戲系統。</span>
+      <span class="l-ja"><b>ArcadeGalaxy</b> のバックエンドを一人で担当——設計・デプロイ・運用。企画とプロデューサーの仕様から10のゲームシステムを実装。</span>
+    </div>
+    <ul class="pts">
+      <li>
+        <span class="l-en"><b>Reduced AWS operating costs by 75%</b> through iterative architecture optimisation, while owning the CI/CD pipeline and cloud buildout end to end.</span>
+        <span class="l-zh"><b>AWS 維運費用降低 75%</b>——持續進行架構最佳化，並獨立完成伺服器 CI/CD 架構與 AWS 雲端服務建置。</span>
+        <span class="l-ja"><b>AWS の運用コストを75%削減。</b>継続的なアーキテクチャ最適化に加え、CI/CD とクラウド構築を単独で担当。</span>
+      </li>
+      <li>
+        <span class="l-en"><b>Built a custom OIDC identity provider</b> with OpenIddict, unblocking players in regions where Firebase is unavailable.</span>
+        <span class="l-zh"><b>自建 OIDC 身分驗證系統</b>——以 OpenIddict 實作，解決不支援 Firebase 地區的玩家無法登入的問題。</span>
+        <span class="l-ja"><b>OIDC 認証基盤を自作。</b>OpenIddict で実装し、Firebase が利用できない地域のプレイヤーのログインを可能に。</span>
+      </li>
+      <li>
+        <span class="l-en"><b>Integrated Steam payments</b>, processing live transactions and streamlining the checkout flow.</span>
+        <span class="l-zh"><b>Steam 金流串接</b>——處理實際交易並提升付款流程效率。</span>
+        <span class="l-ja"><b>Steam 決済を統合。</b>実取引を処理し、購入フローを効率化。</span>
+      </li>
+      <li>
+        <span class="l-en"><b>Authored and deployed 3 smart contracts</b>, moving game data on-chain for verifiability, with writes routed through an SQS consumer so chain latency stayed off the request path.</span>
+        <span class="l-zh"><b>撰寫並部署 3 個智能合約</b>，將遊戲資料上鏈以提升可驗證性；上鏈寫入透過 SQS consumer 送出，讓區塊鏈延遲不影響請求路徑。</span>
+        <span class="l-ja"><b>スマートコントラクトを3件開発・デプロイ。</b>ゲームデータをオンチェーン化して検証可能にし、書き込みは SQS consumer 経由にすることでチェーンの遅延をリクエスト経路から切り離しました。</span>
+      </li>
+    </ul>
+    <div class="stack">C# (Unity) · PostgreSQL · Redis · Nginx · Firebase · GitLab · Docker · Solidity · AWS (EC2, Elastic Beanstalk, ElastiCache, IAM, RDS, S3, Secrets Manager, VPC)</div>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">
+        <span class="l-en">Software Engineer, Blockchain <span class="co">· Jie Ding Information Consulting</span></span>
+        <span class="l-zh">軟體工程師 <span class="co">· 杰鼎資訊顧問有限公司</span></span>
+        <span class="l-ja">ソフトウェアエンジニア（ブロックチェーン） <span class="co">· Jie Ding Information Consulting</span></span>
+      </div>
+      <div class="job-when">2021.10 – 2022.07</div>
+    </div>
+    <div class="job-sum">
+      <span class="l-en">Development and operation of blockchain-based financial products in Solidity.</span>
+      <span class="l-zh">以 Solidity 及智能合約實現區塊鏈金融產品的開發與維運。</span>
+      <span class="l-ja">Solidity とスマートコントラクトによるブロックチェーン金融プロダクトの開発・運用。</span>
+    </div>
+    <ul class="pts">
+      <li>
+        <span class="l-en"><b>Developed, tested and deployed 5 smart contracts</b>, all shipped on schedule.</span>
+        <span class="l-zh"><b>完成 5 個智能合約的開發、測試與部署</b>，全數如期上線。</span>
+        <span class="l-ja"><b>スマートコントラクト5件を開発・テスト・デプロイ</b>し、すべて予定どおりリリース。</span>
+      </li>
+      <li>
+        <span class="l-en">Optimised the back-office admin flow, cutting processing time by roughly 50%.</span>
+        <span class="l-zh">優化網站後台管理流程，處理時間縮短約 50%。</span>
+        <span class="l-ja">管理画面の業務フローを最適化し、処理時間を約50%短縮。</span>
+      </li>
+      <li>
+        <span class="l-en">Led technical coordination across departments, translating support and user requirements into system changes.</span>
+        <span class="l-zh">主導跨部門技術合作，將客服與使用者端的需求轉化為實際的系統調整。</span>
+        <span class="l-ja">部門横断の技術調整を主導し、サポートやユーザー側の要望をシステム改修に落とし込み。</span>
+      </li>
+    </ul>
+    <div class="stack">Solidity · Truffle · Ganache · Golang</div>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">
+        <span class="l-en">Game Engineer <span class="co">· Wanin International</span></span>
+        <span class="l-zh">遊戲工程師 <span class="co">· 網銀國際台北分公司</span></span>
+        <span class="l-ja">ゲームエンジニア <span class="co">· Wanin International</span></span>
+      </div>
+      <div class="job-when">2020.11 – 2021.08</div>
+    </div>
+    <div class="job-sum">
+      <span class="l-en">Server-side systems, client integration and web tooling for non-core game features.</span>
+      <span class="l-zh">遊戲核心外相關系統的伺服器端開發、客戶端 UI 串接與網頁工具撰寫。</span>
+      <span class="l-ja">コア以外のゲーム機能について、サーバーサイド開発・クライアント連携・Web ツール作成を担当。</span>
+    </div>
+    <ul class="pts">
+      <li>
+        <span class="l-en">Shipped <b>friends, party and matchmaking systems</b>, including automatic opponent pairing.</span>
+        <span class="l-zh">開發<b>好友、組隊與配對系統</b>，實現自動配對適合對手的機制。</span>
+        <span class="l-ja"><b>フレンド・パーティー・マッチメイキング</b>を実装し、対戦相手の自動マッチングを実現。</span>
+      </li>
+      <li>
+        <span class="l-en">Built a server-side player telemetry system, plus a web query tool used daily by the design team.</span>
+        <span class="l-zh">建置玩家操作記錄系統，並開發供企劃日常使用的網頁查詢工具。</span>
+        <span class="l-ja">プレイヤー行動のテレメトリ基盤と、企画チームが日常的に使う Web 検索ツールを構築。</span>
+      </li>
+      <li>
+        <span class="l-en">Implemented Redis-backed global announcements, score caching and real-time leaderboards.</span>
+        <span class="l-zh">以 Redis 實作全服公告推播、玩家積分快取與即時排名。</span>
+        <span class="l-ja">Redis を用いた全体アナウンス配信、スコアキャッシュ、リアルタイムランキングを実装。</span>
+      </li>
+    </ul>
+    <div class="stack">C# · Unity · PostgreSQL · Redis · Linux · Docker · TypeScript (Angular) · Perforce</div>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title">
+        <span class="l-en">QA Engineer <span class="co">· Wanin International</span></span>
+        <span class="l-zh">測試工程師 <span class="co">· 網銀國際台北分公司</span></span>
+        <span class="l-ja">QA エンジニア <span class="co">· Wanin International</span></span>
+      </div>
+      <div class="job-when">2018.05 – 2020.10</div>
+    </div>
+    <div class="job-sum">
+      <span class="l-en">Lead QA for a live-service title.</span>
+      <span class="l-zh">營運中遊戲專案的主 QA。</span>
+      <span class="l-ja">運営中タイトルのリード QA。</span>
+    </div>
+    <ul class="pts">
+      <li>
+        <span class="l-en">Owned test planning and assignment for the QA team.</span>
+        <span class="l-zh">制定測試計畫並分配團隊人力執行。</span>
+        <span class="l-ja">テスト計画の策定とチームへの割り当てを担当。</span>
+      </li>
+      <li>
+        <span class="l-en">Specialised in reproducing hard-to-trigger defects and turning the reproduction steps into reusable regression cases.</span>
+        <span class="l-zh">專注於難以觸發之缺陷的重現，並將測試方法整理為可重複使用的回歸案例。</span>
+        <span class="l-ja">再現の難しい不具合の再現手順を特定し、再利用可能なリグレッションケースとして整備。</span>
+      </li>
+    </ul>
+    <div class="stack">C# · Unity · PostgreSQL · Redis · Perforce</div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>
+    <span class="l-en">Education</span>
+    <span class="l-zh">學歷</span>
+    <span class="l-ja">学歴</span>
+  </h2>
+  <div class="edu-row">
+    <div class="edu-name">
+      <span class="l-en">St. John's University, Taiwan — B.S., Electrical Engineering</span>
+      <span class="l-zh">聖約翰科技大學 — 電機工程學系</span>
+      <span class="l-ja">聖約翰科技大学（台湾） — 電気工学科 学士</span>
+    </div>
+    <div class="job-when">2011 – 2015</div>
+  </div>
+</div></section>
+
+<section class="block" id="skills"><div class="wrap">
+  <h2>
+    <span class="l-en">Skills</span>
+    <span class="l-zh">技能</span>
+    <span class="l-ja">スキル</span>
+  </h2>
+  <div class="kv">
+    <div class="kk"><span class="l-en">Languages</span><span class="l-zh">程式語言</span><span class="l-ja">言語</span></div>
+    <div class="vv">C# (.NET) · Rust · TypeScript · Solidity · Golang</div>
+  </div>
+  <div class="kv">
+    <div class="kk"><span class="l-en">Data</span><span class="l-zh">資料</span><span class="l-ja">データ</span></div>
+    <div class="vv">PostgreSQL · MySQL · Redis</div>
+  </div>
+  <div class="kv">
+    <div class="kk"><span class="l-en">Cloud</span><span class="l-zh">雲端</span><span class="l-ja">クラウド</span></div>
+    <div class="vv">AWS · GCP · Docker · Kubernetes (RKE2) · Proxmox VE</div>
+  </div>
+  <div class="kv">
+    <div class="kk"><span class="l-en">Tooling</span><span class="l-zh">工具</span><span class="l-ja">ツール</span></div>
+    <div class="vv">Git · GitHub Actions · GitLab CI/CD · Nginx · Linux · Claude · Codex</div>
+  </div>
+  <div class="kv">
+    <div class="kk"><span class="l-en">Spoken</span><span class="l-zh">語言能力</span><span class="l-ja">語学</span></div>
+    <div class="vv">
+      <span class="l-en">Chinese (native) · Japanese (JLPT N1) · English (intermediate)</span>
+      <span class="l-zh">中文（母語）· 日文（JLPT N1）· 英文（中階）</span>
+      <span class="l-ja">中国語（母語）· 日本語（JLPT N1）· 英語（中級）</span>
+    </div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>
+    <span class="l-en">Selected work</span>
+    <span class="l-zh">代表作品</span>
+    <span class="l-ja">主な成果</span>
+  </h2>
+  <p class="summary">
+    <span class="l-en">Case studies with the design trade-offs and measured numbers behind them — ArcadeGalaxy, Apache OpenDAL, MacacaViewSystem, a six-year Warcraft III community stack, and two self-directed systems built on opposite sides of the concurrency trade-off — are at <a href="https://fatorin.github.io/">fatorin.github.io</a>.</span>
+    <span class="l-zh">完整的案例說明——ArcadeGalaxy、Apache OpenDAL、MacacaViewSystem、維護六年的 Warcraft III 社群技術棧，以及兩套刻意站在併發取捨兩端的自主專案——連同設計取捨與實測數字，都在 <a href="https://fatorin.github.io/">fatorin.github.io</a>。</span>
+    <span class="l-ja">設計上の判断と実測値を添えたケーススタディ——ArcadeGalaxy、Apache OpenDAL、MacacaViewSystem、6年間支えてきた Warcraft III コミュニティの基盤、そして並行性のトレードオフで正反対に振った2つの自主プロジェクト——は <a href="https://fatorin.github.io/">fatorin.github.io</a> にあります。</span>
+  </p>
+</div></section>
+
+<footer class="screen-only"><div class="wrap footrow">
+  <span>© 2026 Rin Hsu</span>
+  <span><a href="/">portfolio</a> · <a href="https://github.com/Fatorin">github</a> · <a href="mailto:sksly789@gmail.com">email</a></span>
+</div></footer>
+
+<script>
+(function () {
+  var html = document.documentElement;
+  var buttons = document.querySelectorAll('[data-setlang]');
+  function apply(lang) {
+    html.dataset.lang = lang;
+    html.setAttribute('lang', lang === 'zh' ? 'zh-Hant' : lang);
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', b.dataset.setlang === lang ? 'true' : 'false');
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.dataset.setlang); });
+  });
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  if (saved === 'en' || saved === 'zh' || saved === 'ja') {
+    apply(saved);
+  } else {
+    var nav = (navigator.language || 'en').toLowerCase();
+    if (nav.indexOf('zh') === 0) apply('zh');
+    else if (nav.indexOf('ja') === 0) apply('ja');
+  }
+})();
+</script>
+</body>
+</html>
