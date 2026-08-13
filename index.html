@@ -228,7 +228,7 @@ footer {
   <span class="navname">Rin Hsu</span>
   <span class="navright">
     <span class="navlinks">
-      <a href="#arcadegalaxy">arcadegalaxy</a><a href="#opendal">opendal</a><a href="#viewsystem">viewsystem</a><a href="#warcraft">warcraft-iii</a><a href="#side-projects">side projects</a><a href="#about">about</a><a href="/resume.html">résumé</a>
+      <a href="#arcadegalaxy">arcadegalaxy</a><a href="#opendal">opendal</a><a href="#viewsystem">viewsystem</a><a href="#warcraft">warcraft-iii</a><a href="#about">about</a><a href="/resume.html">résumé</a>
     </span>
     <span class="langsw" role="group" aria-label="Language">
       <button type="button" data-setlang="en" aria-pressed="true">EN</button>
@@ -753,125 +753,6 @@ footer {
     <a href="https://github.com/Fatorin/ghostpp-rs">→ ghostpp-rs</a>
     <a href="https://github.com/Fatorin/bn_manager">→ bn_manager</a>
     <a href="https://github.com/Fatorin/pvpgn-hash-rs">→ pvpgn-hash-rs</a>
-  </div>
-</div></section>
-
-<!-- ================= Side projects ================= -->
-<section class="case" id="side-projects"><div class="wrap">
-  <span class="tag"><span class="dot"></span>Side projects · self-directed</span>
-  <h2>Two answers to the same question</h2>
-  <div class="sub">
-    <span class="l-en">Two systems built back to back, deliberately on opposite sides of the concurrency trade-off — and measured until the numbers were defensible.</span>
-    <span class="l-zh">兩套接連做完的系統，刻意站在併發取捨的兩端——並且量到數字站得住腳為止。</span>
-    <span class="l-ja">続けて作った2つのシステム。並行性のトレードオフで意図的に正反対の側に立たせ、数字が説明に耐えるまで測りました。</span>
-  </div>
-
-  <div class="spec">
-    <div><div class="k">Role</div><div class="v">
-      <span class="l-en">Solo — spec, build, deploy, measure</span>
-      <span class="l-zh">獨立完成：規格、實作、部署、量測</span>
-      <span class="l-ja">単独 — 仕様・実装・デプロイ・計測</span>
-    </div></div>
-    <div><div class="k">Stack</div><div class="v">Rust · Tokio · .NET 10 · Kafka · Redis · etcd · RKE2 · Proxmox</div></div>
-    <div><div class="k">Verified on</div><div class="v">
-      <span class="l-en">A 5-node RKE2 cluster I built myself</span>
-      <span class="l-zh">自己架的 5 節點 RKE2 叢集</span>
-      <span class="l-ja">自分で構築した5ノードの RKE2 クラスタ</span>
-    </div></div>
-  </div>
-
-  <p>
-    <span class="l-en">A matching engine and a flash-sale system look like the same problem from a distance: far more requests than inventory, arriving all at once. They are not. One cannot afford to lose a single order and must be able to prove it; the other only has to never sell the same item twice, and can repair the rest afterwards. I built both, on purpose, to see where the line between them actually falls.</span>
-    <span class="l-zh">撮合引擎和秒殺系統，遠看像同一個問題：請求遠多於庫存，而且同時湧入。其實不是。前者一筆訂單都不能掉，而且必須能證明；後者只要保證同一件商品不賣兩次，其餘的事後修補即可。我刻意兩個都做，就是想看清楚這條界線到底畫在哪裡。</span>
-    <span class="l-ja">マッチングエンジンとフラッシュセールは、遠目には同じ問題に見えます。在庫をはるかに超えるリクエストが一斉に届く。しかし違います。前者は一件の注文も失えず、失っていないことを証明できなければならない。後者は同じ商品を二度売らなければよく、残りは後から直せる。その境界が実際どこにあるのかを見るために、意図的に両方を作りました。</span>
-  </p>
-
-  <figure class="diagram">
-    <svg viewBox="0 0 860 316" role="img" aria-label="matching-engine and seckill compared across three design decisions">
-      <style>
-        .sbxh { fill:#EAF1F0; stroke:#2F6F6A; stroke-width:1.8; }
-        .sbx { fill:#F5F7F6; stroke:#2F6F6A; stroke-width:1.2; }
-        .slb { font-family:"IBM Plex Mono",monospace; font-size:12.5px; fill:#17211F; }
-        .ssm { font-family:"IBM Plex Mono",monospace; font-size:10.5px; fill:#5D6E6B; }
-        .sband { fill:none; stroke:#8FADA9; stroke-width:1.1; stroke-dasharray:3 3; }
-      </style>
-
-      <rect class="sbxh" x="15" y="14" width="400" height="56" rx="6"/>
-      <text class="slb" x="215" y="39" text-anchor="middle">matching-engine — rust</text>
-      <text class="ssm" x="215" y="56" text-anchor="middle">strict consistency, determinism, microseconds</text>
-
-      <rect class="sbxh" x="445" y="14" width="400" height="56" rx="6"/>
-      <text class="slb" x="645" y="39" text-anchor="middle">seckill — .net 10</text>
-      <text class="ssm" x="645" y="56" text-anchor="middle">throughput first, repair the rest afterwards</text>
-
-      <rect class="sbx" x="15" y="88" width="400" height="52" rx="6"/>
-      <text class="slb" x="35" y="110">single writer per symbol</text>
-      <text class="ssm" x="35" y="127">one thread, everything fully ordered</text>
-
-      <rect class="sbx" x="445" y="88" width="400" height="52" rx="6"/>
-      <text class="slb" x="465" y="110">hot path touches redis + kafka only</text>
-      <text class="ssm" x="465" y="127">202 returns immediately, db write is async</text>
-
-      <rect class="sbx" x="15" y="152" width="400" height="52" rx="6"/>
-      <text class="slb" x="35" y="174">ack only after fsync + replication</text>
-      <text class="ssm" x="35" y="191">durability first, latency second</text>
-
-      <rect class="sbx" x="445" y="152" width="400" height="52" rx="6"/>
-      <text class="slb" x="465" y="174">redis data plane, etcd control plane</text>
-      <text class="ssm" x="465" y="191">separate failure domains</text>
-
-      <rect class="sbx" x="15" y="216" width="400" height="52" rx="6"/>
-      <text class="slb" x="35" y="238">deterministic WAL replay</text>
-      <text class="ssm" x="35" y="255">same input, same state, every time</text>
-
-      <rect class="sbx" x="445" y="216" width="400" height="52" rx="6"/>
-      <text class="slb" x="465" y="238">reconciliation repairs the drift</text>
-      <text class="ssm" x="465" y="255">best effort, then audited to zero</text>
-
-      <rect class="sband" x="15" y="280" width="830" height="30" rx="6"/>
-      <text class="ssm" x="430" y="299" text-anchor="middle">both deployed to the same self-built proxmox + rke2 cluster, then put through chaos — reconciliation has to come out at zero</text>
-    </svg>
-    <figcaption>same shape of load, opposite answers — and both had to prove it</figcaption>
-  </figure>
-
-  <h3>
-    <span class="l-en">Decisions that mattered</span>
-    <span class="l-zh">關鍵決策</span>
-    <span class="l-ja">重要だった意思決定</span>
-  </h3>
-  <ul class="decisions">
-    <li>
-      <span class="l-en"><b>Correctness before speed, in both.</b> The matching engine acknowledges an order only after it is on disk and replicated, and replays its write-ahead log to a byte-identical state. The flash-sale system never oversold across 300,000 requests with pods being killed at random, verified three separate ways — HTTP responses, database rows, and a ledger reconciliation. Those two guarantees were fixed before any optimisation started, and neither was relaxed.</span>
-      <span class="l-zh"><b>兩邊都是正確性優先於速度。</b>撮合引擎只有在訂單落盤且完成複製後才回 ack，並能把 WAL 重放成位元完全相同的狀態。秒殺系統在 30 萬請求、隨機殺 pod 的情況下零超賣，並以三種方式交叉驗證——HTTP 回應、資料庫紀錄、帳目對帳。這兩條保證在任何優化開始前就先定死，過程中都沒有放寬。</span>
-      <span class="l-ja"><b>どちらも、速度より先に正しさ。</b>マッチングエンジンは注文がディスクに載り複製されて初めて ack を返し、WAL を再生してバイト単位で同一の状態に戻せます。フラッシュセールは30万リクエスト＋ランダムな pod 停止のもとで売り越しゼロ、HTTP 応答・DB 行・帳簿照合の三系統で検証しました。この2つの保証は最適化に着手する前に固定し、最後まで緩めていません。</span>
-    </li>
-    <li>
-      <span class="l-en"><b>The cluster is mine too.</b> Neither project ran on managed infrastructure. I stood up Proxmox VE, cut five virtual machines at four vCPUs each, and installed RKE2 across them — so CPU limits, CNI behaviour, storage classes and node failure were all things I configured rather than things handed to me. That is also why the ceilings in this section are honest: when the flash-sale system stalled around 12,000 RPS, I could tell it was the cluster's network and not the application.</span>
-      <span class="l-zh"><b>叢集也是我自己架的。</b>兩個專案都沒有跑在託管的基礎設施上。我自己裝了 Proxmox VE，切出五台四核虛擬機，在上面安裝 RKE2——所以 CPU 限制、CNI 行為、storage class、節點故障，全都是我設定出來的，而不是別人給我的。這也是為什麼這一節的天花板是誠實的：秒殺系統卡在 12,000 RPS 左右時，我能判斷那是叢集的網路，而不是應用程式。</span>
-      <span class="l-ja"><b>クラスタも自分で立てた。</b>どちらのプロジェクトもマネージドインフラでは動かしていません。Proxmox VE を構築し、4 vCPU の仮想マシンを5台切り出し、その上に RKE2 を導入しました。CPU 制限、CNI の挙動、ストレージクラス、ノード障害——すべて与えられたものではなく、自分で設定したものです。この節の天井が正直である理由もそこにあります。フラッシュセールが 12,000 RPS 付近で頭打ちになったとき、それがアプリではなくクラスタのネットワークだと判断できました。</span>
-    </li>
-    <li>
-      <span class="l-en"><b>Every pitfall I hit is written down.</b> Both repos keep a running log of what broke, what it actually turned out to be, and what changed. A few entries: a journal writer spinning on <span class="mono">yield_now()</span> quietly burned a full core, which only surfaced once the container had a 1-CPU limit — throughput went from 431/s to 2,097/s once fixed. PID 1 in a container ignores <span class="mono">SIGTERM</span> without an installed handler, which made failover 30 seconds slower. A Kafka volume mounted one directory too high got its topics wiped on every restart. The market-data service didn't follow leader election, so it sat on the hot standby looking perfectly healthy while its order book never moved.</span>
-      <span class="l-zh"><b>每一個踩到的坑都寫下來。</b>兩個 repo 裡都留著一份紀錄：壞在哪、最後查出來是什麼、改了什麼。其中幾則：journal writer 在 <span class="mono">yield_now()</span> 上空轉，安靜地燒掉一整顆 CPU——只有在容器被限制成 1 CPU 時才會浮現，修好後吞吐從 431/s 變成 2,097/s。容器裡的 PID 1 沒有安裝 handler 就會忽略 <span class="mono">SIGTERM</span>，害 failover 慢了 30 秒。Kafka 的 volume 掛在 log 目錄的上一層，每次重啟 topic 全部消失。行情服務不跟隨選主，安靜地黏在熱備上——看起來一切健康，但盤口永遠不動。</span>
-      <span class="l-ja"><b>踏んだ落とし穴は、すべて書き残す。</b>どちらのリポジトリにも、何が壊れ、原因は結局何で、何を変えたのかの記録を残しています。いくつか挙げると——journal writer が <span class="mono">yield_now()</span> で空回りし、CPU を1コア丸ごと焼いていました。コンテナが 1 CPU 制限のときだけ顕在化し、修正後はスループットが 431/s から 2,097/s へ。コンテナの PID 1 はハンドラ未登録の <span class="mono">SIGTERM</span> を無視するため、フェイルオーバーが30秒遅れました。Kafka のボリュームがログディレクトリの一階層上にマウントされており、再起動のたびにトピックが消えていました。市況サービスがリーダー選出に追従せず、ホットスタンバイに張り付いたまま——健全に見えるのに板が一切動かない。</span>
-    </li>
-    <li>
-      <span class="l-en"><b>Two targets went unmet, and I wrote that down instead of moving them.</b> The matching engine hit its throughput and p99 goals but missed p99.9 and LAN p99, so the milestone stayed untagged and the reasons are in the perf doc. The flash-sale system aimed for 30,000 RPS and found the cluster's network ceiling at around 12,000 — a hardware limit, not an application one — so the capacity claim was rechecked as RPS-per-vCPU with extrapolation points rather than quietly restated. A number you had to move is worth less than the reason it wouldn't move.</span>
-      <span class="l-zh"><b>有兩項目標沒達成，我把它寫下來，而不是把標準移過去。</b>撮合引擎的吞吐與 p99 都達標，但 p99.9 與區網 p99 沒過，所以那個里程碑就不打 tag，原因寫在效能文件裡。秒殺系統原訂 30,000 RPS，實測發現叢集的網路上限約 12,000——那是硬體天花板而不是應用瓶頸——於是容量口徑改成「每 vCPU RPS + 外推驗證點」，而不是安靜地換個說法。一個被移動過的數字，價值遠低於它為什麼移不動的理由。</span>
-      <span class="l-ja"><b>未達の目標が2つあり、基準を動かす代わりに書き残した。</b>マッチングエンジンはスループットと p99 は達成、p99.9 と LAN p99 は未達だったため、マイルストーンにタグは打たず、理由を性能ドキュメントに残しました。フラッシュセールは 30,000 RPS を目標としましたが、クラスタのネットワーク上限が約 12,000 —— アプリではなくハードウェアの天井 —— と判明したため、容量の指標を「vCPU あたり RPS ＋ 外挿の検証点」に取り直しました。黙って言い換えることはしていません。動かした数字より、動かなかった理由のほうが価値があります。</span>
-    </li>
-  </ul>
-
-  <div class="outcomes">
-    <div class="outcome"><div class="n">6.39 µs</div><div class="l">matching p99, worst run</div></div>
-    <div class="outcome"><div class="n">2.59 s</div><div class="l">kill -9 takeover, zero loss</div></div>
-    <div class="outcome"><div class="n">0</div><div class="l">oversold in 300k requests</div></div>
-    <div class="outcome"><div class="n">108,001</div><div class="l">concurrent sse connections</div></div>
-  </div>
-
-  <div class="case-links">
-    <a href="https://github.com/Fatorin/matching-engine">→ matching-engine</a>
-    <a href="https://github.com/Fatorin/seckill">→ seckill</a>
   </div>
 </div></section>
 
