@@ -246,9 +246,9 @@ footer {
     <span class="l-ja">バックエンド開発を、<span class="t">ゲーム業界で。</span></span>
   </h1>
   <p class="lede">
-    <span class="l-en">Just over five years of backend work in C# / .NET and Rust. For each system below I've written down the trade-offs I made and the numbers I actually measured.</span>
-    <span class="l-zh">五年多的後端開發經驗，主要使用 C# / .NET 與 Rust。以下每一套系統，我都寫下了當時的取捨與實際量到的數字。</span>
-    <span class="l-ja">C# / .NET と Rust を中心に5年あまりのバックエンド開発経験。以下の各システムについて、その時の判断と実際に計測した数字を書き残しています。</span>
+    <span class="l-en">Four to five years of backend work, mainly in C# / .NET and Rust. For each system below I've written down the trade-offs I made and the numbers I actually measured.</span>
+    <span class="l-zh">約 4–5 年的後端開發經驗，主要使用 C# / .NET 與 Rust。以下每一套系統，我都寫下了當時的取捨與實際量到的數字。</span>
+    <span class="l-ja">C# / .NET と Rust を中心に、約4〜5年のバックエンド開発経験があります。以下の各システムについて、その時の判断と実際に計測した数字を書き残しています。</span>
   </p>
   <div class="hero-links">
     <a href="/resume.html">
@@ -268,16 +268,16 @@ footer {
   <div class="sub">
     <span class="l-en">Sole backend engineer for a commercial party platformer — architecture, deployment, and operations, Oct 2022 to Feb 2025.</span>
     <span class="l-zh">商業派對遊戲的唯一後端工程師——架構、部署與維運，2022.10 – 2025.02。</span>
-    <span class="l-ja">商業パーティーゲームの唯一のバックエンドエンジニアとして、設計・デプロイ・運用を担当（2022年10月〜2025年2月）。</span>
+    <span class="l-ja">商業パーティーゲームのバックエンドを1名体制で担当し、設計・デプロイ・運用を一手に担いました（2022年10月〜2025年2月）。</span>
   </div>
 
   <div class="spec">
     <div><div class="k">Role</div><div class="v">
       <span class="l-en">Sole backend owner</span>
       <span class="l-zh">唯一的後端負責人</span>
-      <span class="l-ja">バックエンドを一人で担当</span>
+      <span class="l-ja">バックエンドを1名体制で担当</span>
     </div></div>
-    <div><div class="k">Stack</div><div class="v">C# (.NET) · PostgreSQL · Redis · SQS · SignalR · AWS</div></div>
+    <div><div class="k">Stack</div><div class="v">C# (.NET) · Rust · PostgreSQL · Redis · SQS · SignalR · AWS · Solidity</div></div>
     <div><div class="k">Scope</div><div class="v">
       <span class="l-en">10 game systems, from spec to live ops</span>
       <span class="l-zh">10 項遊戲系統，從規格到上線維運</span>
@@ -286,9 +286,9 @@ footer {
   </div>
 
   <p>
-    <span class="l-en">ArcadeGalaxy is a multiplayer party game on Steam. I owned the entire backend as the only server engineer on the team — every game system the designers specced, I designed, built, deployed, and kept running.</span>
-    <span class="l-zh">ArcadeGalaxy 是 Steam 上的多人派對遊戲。我是團隊裡唯一的伺服器工程師——企劃規格書上的每一個遊戲系統，都由我設計、實作、部署並持續維運。</span>
-    <span class="l-ja">ArcadeGalaxy は Steam のマルチプレイパーティーゲームです。チーム唯一のサーバーエンジニアとして、企画が仕様化したすべてのゲームシステムを、設計から実装、デプロイ、運用まで担当しました。</span>
+    <span class="l-en">ArcadeGalaxy is a multiplayer party game on Steam. I owned the entire backend as the only server engineer on the team — every game system the designers specced, I designed, built, deployed, and kept running. They ranged from gameplay and player-made maps to Web3 features and the community data APIs behind the Creator Center website, and the game server is covered by 152 integration tests.</span>
+    <span class="l-zh">ArcadeGalaxy 是 Steam 上的多人派對遊戲。我是團隊裡唯一的伺服器工程師——企劃規格書上的每一個遊戲系統，都由我設計、實作、部署並持續維運。範圍從遊戲玩法、玩家自製地圖，到 Web3 功能與創作者中心網站的社群資料 API；遊戲伺服器並有 152 個整合測試把關。</span>
+    <span class="l-ja">ArcadeGalaxy は Steam のマルチプレイパーティーゲームです。サーバーエンジニアは私1名で、企画が仕様化したすべてのゲームシステムを、設計から実装、デプロイ、運用まで担当しました。対象はゲームプレイやユーザー作成マップから、Web3 機能、クリエイターセンター（Web サイト）向けのコミュニティデータ API まで多岐にわたり、ゲームサーバーは152件の結合テストでカバーしています。</span>
   </p>
 
   <figure class="diagram">
@@ -315,11 +315,11 @@ footer {
       <text class="lb" x="325" y="44" text-anchor="middle">OIDC IdP</text>
       <text class="sm" x="325" y="61" text-anchor="middle">OpenIddict, custom</text>
       <rect class="bx" x="500" y="210" width="150" height="56"/>
-      <text class="lb" x="575" y="234" text-anchor="middle">SQS consumer</text>
-      <text class="sm" x="575" y="251" text-anchor="middle">on-chain writes</text>
+      <text class="lb" x="575" y="234" text-anchor="middle">Rust chain service</text>
+      <text class="sm" x="575" y="251" text-anchor="middle">consumes SQS</text>
       <rect class="bx2" x="710" y="210" width="130" height="56"/>
       <text class="lb" x="775" y="234" text-anchor="middle">Blockchain</text>
-      <text class="sm" x="775" y="251" text-anchor="middle">ledger records</text>
+      <text class="sm" x="775" y="251" text-anchor="middle">NFTs · race records</text>
       <rect class="bx" x="500" y="46" width="150" height="56"/>
       <text class="lb" x="575" y="70" text-anchor="middle">PostgreSQL</text>
       <text class="sm" x="575" y="87" text-anchor="middle">RDS</text>
@@ -347,30 +347,41 @@ footer {
   </h3>
   <ul class="decisions">
     <li>
-      <span class="l-en"><b>Built the identity provider instead of buying it.</b> Firebase Auth is unavailable in some player regions, so I implemented a custom OIDC IdP with OpenIddict. Players everywhere log in through the same flow, and the game owns its account system.</span>
-      <span class="l-zh"><b>自建身分驗證系統，而不是採用現成服務。</b>部分玩家地區無法使用 Firebase Auth，因此我以 OpenIddict 實作了自有的 OIDC IdP。所有地區的玩家走同一套登入流程，帳號系統也完全掌握在遊戲手上。</span>
-      <span class="l-ja"><b>認証基盤は買わずに作る。</b>一部地域では Firebase Auth が利用できないため、OpenIddict で独自の OIDC IdP を実装しました。全地域のプレイヤーが同じログインフローを利用でき、アカウント基盤を自社で保有できます。</span>
+      <span class="l-en"><b>Built the identity provider instead of buying it.</b> Players in China can't use Firebase sign-in, so I implemented a standalone OIDC IdP with OpenIddict, with Steam login supported alongside it. Players everywhere log in through the same flow, and the game owns its account system.</span>
+      <span class="l-zh"><b>自建身分驗證系統，而不是採用現成服務。</b>中國地區的玩家無法使用 Firebase 登入，因此我以 OpenIddict 實作了獨立的 OIDC IdP，並支援 Steam 登入。所有地區的玩家走同一套登入流程，帳號系統也完全掌握在遊戲手上。</span>
+      <span class="l-ja"><b>認証基盤は買わずに作る。</b>中国では Firebase 認証が利用できないため、OpenIddict で独自の OIDC IdP を実装し、Steam ログインにも対応しました。全地域のプレイヤーが同じログインフローを利用でき、アカウント基盤を自社で保有できます。</span>
     </li>
     <li>
-      <span class="l-en"><b>Cut the AWS bill by 75% without cutting capacity.</b> Iterative architecture work — right-sizing instances, caching with Redis, removing redundant workloads — brought operating cost down to a quarter of the original.</span>
-      <span class="l-zh"><b>在不犧牲容量的前提下砍掉 75% 的 AWS 費用。</b>透過持續的架構調整——instance 規格調整、Redis 快取、移除多餘的運算負載——將維運成本降到原本的四分之一。</span>
-      <span class="l-ja"><b>性能を落とさず AWS コストを75%削減。</b>インスタンスの適正化、Redis キャッシュ、冗長なワークロードの削減など、継続的なアーキテクチャ改善により運用コストを4分の1にしました。</span>
+      <span class="l-en"><b>Built the AWS stack from zero, then cut its bill by ~75%.</b> I evaluated the options and chose the services myself — EC2, Elastic Beanstalk, RDS, ElastiCache, S3, VPC, IAM — and set up CI/CD alongside. Iterative architecture work after that — right-sizing instances, caching with Redis, removing redundant workloads — brought operating cost down to about a quarter of where it started.</span>
+      <span class="l-zh"><b>AWS 架構從零建起，再把費用砍掉約 75%。</b>方案評估與技術選型（EC2、Elastic Beanstalk、RDS、ElastiCache、S3、VPC、IAM）都由我獨立完成，CI/CD 流程也一併建置。之後透過持續的架構調整——instance 規格調整、Redis 快取、移除多餘的運算負載——把維運費用壓到原本的四分之一左右。</span>
+      <span class="l-ja"><b>AWS 基盤をゼロから構築し、コストを約75%削減。</b>方式検討と技術選定（EC2、Elastic Beanstalk、RDS、ElastiCache、S3、VPC、IAM）を単独で行い、CI/CD も併せて整備。その後もインスタンスの適正化、Redis キャッシュ、冗長なワークロードの削減など継続的にアーキテクチャを改善し、運用コストを当初の約4分の1まで抑えました。</span>
     </li>
     <li>
-      <span class="l-en"><b>SQS as the path to the chain, SignalR as the path to the player.</b> On-chain records are written through an SQS consumer — the message broker absorbs blockchain latency and gives every write retries. Realtime features like the friend system go over SignalR instead. Keeping the two paths separate kept both simple.</span>
-      <span class="l-zh"><b>SQS 通往鏈上，SignalR 通往玩家。</b>寫入鏈上紀錄時，一律透過 SQS consumer 送出——這個 message broker 吸收了區塊鏈的延遲，也讓每一筆寫入都帶有重試。好友系統之類的即時功能則走 SignalR。把兩條路徑分開，讓兩邊都保持簡單。</span>
-      <span class="l-ja"><b>SQS はチェーンへの経路、SignalR はプレイヤーへの経路。</b>オンチェーン記録の書き込みは SQS consumer 経由で行い、メッセージブローカーがブロックチェーンのレイテンシを吸収し、各書き込みにリトライを与えます。フレンド機能などのリアルタイム処理は SignalR へ。経路を分けることで、双方をシンプルに保ちました。</span>
+      <span class="l-en"><b>SQS as the path to the chain, SignalR as the path to the player.</b> Blockchain work lives in its own Rust service — wallet linking, NFT minting, cross-chain transfers — and on-chain transactions reach it through SQS, so the message broker absorbs blockchain latency and gives every write retries. Players' racing history goes into three upgradeable (UUPS) Solidity contracts, where anyone can verify it. Realtime features go over SignalR instead — friends' online status, and invitations to join a room. Keeping the two paths separate kept both simple.</span>
+      <span class="l-zh"><b>SQS 通往鏈上，SignalR 通往玩家。</b>區塊鏈功能拆成獨立的 Rust 服務——錢包綁定、NFT 鑄造、跨鏈轉移——鏈上交易透過 SQS 非同步交給它處理，由 message broker 吸收區塊鏈的延遲，也讓每一筆寫入都帶有重試。玩家的賽車歷史紀錄則寫進 3 個可升級（UUPS）的 Solidity 合約，任何人都能公開驗證。即時功能則走 SignalR——例如好友的上下線狀態，以及邀請玩家加入房間。把兩條路徑分開，讓兩邊都保持簡單。</span>
+      <span class="l-ja"><b>SQS はチェーンへの経路、SignalR はプレイヤーへの経路。</b>ブロックチェーン機能は独立した Rust サービスに切り出し（ウォレット連携、NFT ミント、クロスチェーン転送）、オンチェーン取引は SQS 経由で非同期に処理。メッセージブローカーがブロックチェーンのレイテンシを吸収し、各書き込みにリトライを与えます。プレイヤーのレース履歴はアップグレード可能（UUPS）な Solidity コントラクト3件に記録し、誰でも検証できるようにしました。フレンドのオンライン状態の通知やルームへの招待といったリアルタイム処理は SignalR へ。経路を分けることで、双方をシンプルに保ちました。</span>
     </li>
     <li>
-      <span class="l-en"><b>Steam payments handled server-side.</b> Transaction flow, verification, and reconciliation live in the backend, not the client.</span>
-      <span class="l-zh"><b>Steam 金流全部在伺服器端處理。</b>交易流程、驗證與對帳都放在後端，而不是客戶端。</span>
-      <span class="l-ja"><b>Steam 決済はすべてサーバー側で処理。</b>取引フロー、検証、照合はクライアントではなくバックエンドに置いています。</span>
+      <span class="l-en"><b>Steam payments handled server-side.</b> Initiating, verifying and finalising transactions all live in the backend, not the client.</span>
+      <span class="l-zh"><b>Steam 金流全部在伺服器端處理。</b>交易的建立、驗證與完成都放在後端，而不是客戶端。</span>
+      <span class="l-ja"><b>Steam 決済はすべてサーバー側で処理。</b>取引の作成・検証・確定は、クライアントではなくバックエンドに置いています。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Match results are validated on the server.</b> Player-made maps (UGC) and the leaderboards only take results the server has checked, to prevent cheating.</span>
+      <span class="l-zh"><b>比賽結果在伺服器端驗證。</b>玩家自製地圖（UGC）與排行榜系統的比賽結果一律在伺服器端驗證，以防止作弊。</span>
+      <span class="l-ja"><b>対戦結果はサーバー側で検証する。</b>ユーザー作成マップ（UGC）とランキングでは、不正防止のため対戦結果をサーバー側で検証しています。</span>
+    </li>
+    <li>
+      <span class="l-en"><b>Game data reloads without a redeploy.</b> Alongside friends, mail, achievements, daily login rewards and redeem codes, I built a hot-reload path for design data, so designers can tune values without waiting on a deploy.</span>
+      <span class="l-zh"><b>企劃資料熱更新。</b>除了好友、信件、成就、每日登入與兌換碼等系統，我也建立了企劃資料的熱更新機制，調整數值不需要重新部署。</span>
+      <span class="l-ja"><b>マスターデータはホットリロード。</b>フレンド、メール、実績、ログインボーナス、シリアルコードなどの実装に加え、マスターデータのホットリロードの仕組みを整え、再デプロイなしでパラメータを調整できるようにしました。</span>
     </li>
   </ul>
 
   <div class="outcomes">
     <div class="outcome"><div class="n">−75%</div><div class="l">aws operating cost</div></div>
     <div class="outcome"><div class="n">10</div><div class="l">game systems shipped</div></div>
+    <div class="outcome"><div class="n">152</div><div class="l">integration tests</div></div>
     <div class="outcome"><div class="n">1</div><div class="l">backend engineer</div></div>
   </div>
 
@@ -384,16 +395,16 @@ footer {
   <span class="tag"><span class="dot"></span>Open source · Apache Software Foundation</span>
   <h2>Apache OpenDAL — .NET binding</h2>
   <div class="sub">
-    <span class="l-en">Committer. I implement the C# binding of a Rust data-access layer used across the Apache ecosystem.</span>
-    <span class="l-zh">Committer。實作這套 Rust 資料存取層的 C# binding，OpenDAL 廣泛應用於 Apache 生態系。</span>
-    <span class="l-ja">Committer。Apache エコシステムで広く使われる Rust 製データアクセス層の C# バインディングを実装。</span>
+    <span class="l-en">Committer. I help design and maintain the .NET binding of a Rust data-access layer used across the Apache ecosystem.</span>
+    <span class="l-zh">Committer。參與這套 Rust 資料存取層 .NET binding 的設計與維護，OpenDAL 廣泛應用於 Apache 生態系。</span>
+    <span class="l-ja">Committer。Apache エコシステムで広く使われる Rust 製データアクセス層について、.NET バインディングの設計・保守に参加。</span>
   </div>
 
   <div class="spec">
     <div><div class="k">Role</div><div class="v">
-      <span class="l-en">Committer · C# binding implementer</span>
-      <span class="l-zh">Committer · C# binding 實作者</span>
-      <span class="l-ja">Committer · C# バインディング実装</span>
+      <span class="l-en">Committer · .NET binding design &amp; maintenance</span>
+      <span class="l-zh">Committer · .NET binding 設計與維護</span>
+      <span class="l-ja">Committer · .NET バインディングの設計・保守</span>
     </div></div>
     <div><div class="k">Stack</div><div class="v">Rust · C# · FFI / interop · GitHub Actions</div></div>
     <div><div class="k">Collaboration</div><div class="v">
@@ -520,9 +531,9 @@ footer {
   </div>
 
   <p>
-    <span class="l-en">MacacaViewSystem is my former employer's open-source Unity UI system — views are composed from reusable elements, and the framework decides what to show and when. It loaded every view asset directly, which meant all of them shipped inside the build. I added Addressables as a second loading mode, so views can be packed into bundles and fetched on demand instead.</span>
-    <span class="l-zh">MacacaViewSystem 是前公司開源的 Unity UI 系統——畫面由可重用的元件組成，框架負責決定何時顯示什麼。它原本每個 view 資產都直接載入，等於全部打進 build 裡。我加上 Addressables 作為第二種載入模式，讓 view 改成打包成 bundle、需要時再抓。</span>
-    <span class="l-ja">MacacaViewSystem は前職の会社が公開している Unity の UI システムです。画面は再利用可能な要素から構成され、何をいつ表示するかはフレームワークが決めます。従来は view のアセットを直接読み込む方式で、すべてがビルドに同梱されていました。そこへ Addressables を第二の読み込みモードとして追加し、view をバンドル化して必要時に取得できるようにしました。</span>
+    <span class="l-en">MacacaViewSystem is my former employer's open-source Unity UI system — views are composed from reusable elements, and the framework decides what to show and when. It loaded every view asset directly, which meant all of them shipped inside the build. I added Addressables as a second loading mode, so views can be packed into bundles and fetched on demand instead. In the game I was working on at the time, that moved UI assets out of the install and cut the base package by about 80 MB — enough to fit within the platform's APK size limit.</span>
+    <span class="l-zh">MacacaViewSystem 是前公司開源的 Unity UI 系統——畫面由可重用的元件組成，框架負責決定何時顯示什麼。它原本每個 view 資產都直接載入，等於全部打進 build 裡。我加上 Addressables 作為第二種載入模式，讓 view 改成打包成 bundle、需要時再抓。在當時負責的遊戲裡，這讓 UI 資源從安裝包移到隨選載入的 bundle，主包體縮減約 80MB，符合平台 APK 大小限制。</span>
+    <span class="l-ja">MacacaViewSystem は前職の会社が公開している Unity の UI システムです。画面は再利用可能な要素から構成され、何をいつ表示するかはフレームワークが決めます。従来は view のアセットを直接読み込む方式で、すべてがビルドに同梱されていました。そこへ Addressables を第二の読み込みモードとして追加し、view をバンドル化して必要時に取得できるようにしました。当時担当していたタイトルでは、これにより UI リソースをインストールパッケージからオンデマンド読み込みのバンドルへ移し、アプリ本体を約80MB削減して、プラットフォームの APK サイズ制限をクリアしました。</span>
   </p>
 
   <figure class="diagram">
@@ -599,6 +610,7 @@ footer {
   </ul>
 
   <div class="outcomes">
+    <div class="outcome"><div class="n">−80 MB</div><div class="l">base package size</div></div>
     <div class="outcome"><div class="n">15</div><div class="l">commits on master</div></div>
     <div class="outcome"><div class="n">2</div><div class="l">loading modes, old one default</div></div>
     <div class="outcome"><div class="n">0</div><div class="l">migration asked of users</div></div>
@@ -811,7 +823,7 @@ footer {
   <p>
     <span class="l-en">What I'm working towards is specific: a game tens of thousands of people can play at the same time, and the high-concurrency, high-traffic systems that hold it up.</span>
     <span class="l-zh">我想做到的事很具體：做出能讓數萬人同時遊玩的遊戲，以及撐得住它的高併發、高流量系統。</span>
-    <span class="l-ja">目指しているものははっきりしています。数万人が同時に遊べるゲームと、それを支える高並行・高トラフィックなシステムです。</span>
+    <span class="l-ja">目指しているものははっきりしています。数万人が同時に遊べるゲームと、それを支える高負荷・大規模トラフィックに強いシステムです。</span>
   </p>
   <div class="kv">
     <div class="kk">Skills</div>
