@@ -179,7 +179,10 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
   .rcontact { font-size: 9pt; margin-top: 7px; color: #000; }
   section.block { padding: 10px 0 0; border-top: 0.6pt solid #999; }
   h2 { font-size: 8.6pt; margin-bottom: 8px; color: #000; }
-  .job { margin-bottom: 12px; }
+  .job { margin-bottom: 12px; break-inside: auto; }
+  .job-head, .job-sum { break-after: avoid; }
+  ul.pts li { break-inside: avoid; }
+  .stack { break-before: avoid; }
   .job-title { font-size: 11pt; }
   .job-title .co { color: #000; }
   .job-when, .job-sum, .stack, .kv .kk, .kv .vv, .note { color: #000; }
@@ -214,13 +217,15 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
 <header class="rhead"><div class="wrap">
   <div class="rname">Rin <span style="color:var(--teal)">Hsu</span></div>
   <div class="rrole">
-    <span class="l-en">Backend Engineer · Taipei, Taiwan</span>
-    <span class="l-zh">後端工程師 · 台北，台灣</span>
-    <span class="l-ja">バックエンドエンジニア · 台北, 台湾</span>
+    <span class="l-en">Backend Engineer · C# / .NET · Cloud · High-Concurrency Systems</span>
+    <span class="l-zh">後端工程師 · C# / .NET · Cloud · High-Concurrency Systems</span>
+    <span class="l-ja">バックエンドエンジニア · C# / .NET · クラウド · 高負荷システム</span>
   </div>
   <div class="rcontact">
+    <span><span class="l-en">Taipei, Taiwan</span><span class="l-zh">台北，台灣</span><span class="l-ja">台湾・台北</span></span>
     <span><a href="mailto:sksly789@gmail.com">sksly789@gmail.com</a></span>
     <span><a href="https://github.com/Fatorin">github.com/Fatorin</a></span>
+    <span><a href="https://www.linkedin.com/in/rin-hsu-b234a7219/">linkedin.com/in/rin-hsu-b234a7219</a></span>
     <span><a href="https://fatorin.github.io/">fatorin.github.io</a></span>
   </div>
 </div></header>
@@ -229,12 +234,12 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
   <h2>
     <span class="l-en">Summary</span>
     <span class="l-zh">關於我</span>
-    <span class="l-ja">概要</span>
+    <span class="l-ja">職務要約</span>
   </h2>
   <p class="summary">
-    <span class="l-en">Backend engineer with just over five years building game servers, cloud infrastructure and high-concurrency systems, after two and a half years in game QA. That start still shapes how I design: I reason from failure modes, edge cases and observability rather than the happy path. I work primarily in C# / .NET and Rust, and pick the stack that fits the problem.</span>
-    <span class="l-zh">後端工程師，五年多的開發經驗，專注於遊戲伺服器、雲端架構與高併發系統；在此之前有兩年半的遊戲 QA 經歷。那個起點至今仍影響我的設計方式——我習慣從失敗情境、邊界條件與可觀測性反推，而不是只顧著讓正常流程跑通。主要使用 C# / .NET 與 Rust，並依專案需求選擇合適的技術棧。</span>
-    <span class="l-ja">ゲームサーバー、クラウド基盤、高並行システムの開発に5年あまり。その前に2年半のゲーム QA 経験があります。この出発点は今も設計の仕方に表れていて、正常系よりも先に障害モード・境界条件・可観測性から考えます。主に C# / .NET と Rust を使い、課題に合った技術を選びます。</span>
+    <span class="l-en">Backend engineer with 4–5 years in software development, focused on C# / .NET backend services, RESTful APIs, cloud architecture, high-concurrency systems and performance optimisation. I've worked across the full lifecycle, from design and development through deployment and operations.</span>
+    <span class="l-zh">具備約 4–5 年軟體開發經驗，專注於 C# / .NET 後端服務、RESTful API、雲端架構、高併發系統與效能優化，具備從系統設計、開發、部署至維運的完整實務經驗。</span>
+    <span class="l-ja">約4〜5年にわたり、C# / .NET を中心としたバックエンドサービス、RESTful API、クラウドアーキテクチャ、高負荷システムの開発とパフォーマンス改善に携わってきました。設計・開発からデプロイ、運用まで一貫して担当した経験があります。</span>
   </p>
 
   <div style="margin-top:18px">
@@ -243,19 +248,29 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
         <span class="l-en">Backend</span><span class="l-zh">後端 / 架構</span><span class="l-ja">バックエンド</span>
       </div>
       <div class="vv">
-        <span class="l-en">C# (.NET), Rust, PostgreSQL, Redis, Docker; self-built OIDC identity provider (OpenIddict), payment integration, profiling and tuning under high-concurrency load</span>
-        <span class="l-zh">C# (.NET)、Rust、PostgreSQL、Redis、Docker；自建 OIDC 身分驗證（OpenIddict）、金流串接、高併發情境下的瓶頸分析與調校</span>
-        <span class="l-ja">C# (.NET)、Rust、PostgreSQL、Redis、Docker、OIDC 認証基盤の自作（OpenIddict）、決済連携、高並行下でのボトルネック分析とチューニング</span>
+        <span class="l-en">C#, .NET 8/10, PostgreSQL, Redis, Docker, AWS, GCP. Independently built game backend services, an OIDC identity provider, CI/CD pipelines and AWS infrastructure, and integrated third-party APIs, Steam payments and cloud services.</span>
+        <span class="l-zh">熟悉 C#、.NET 8/10、PostgreSQL、Redis、Docker、AWS、GCP，曾獨立建置遊戲後端服務、OIDC 身分驗證系統、CI/CD Pipeline 與 AWS 雲端架構，並具備第三方 API、Steam 金流及雲端服務整合經驗。</span>
+        <span class="l-ja">C#、.NET 8/10、PostgreSQL、Redis、Docker、AWS、GCP を用いた開発が中心。ゲームのバックエンド、OIDC 認証基盤、CI/CD パイプライン、AWS のクラウド基盤をいずれも単独で構築したほか、外部 API・Steam 決済・各種クラウドサービスとの連携も経験。</span>
       </div>
     </div>
     <div class="kv">
       <div class="kk">
-        <span class="l-en">Infrastructure</span><span class="l-zh">雲端 / 維運</span><span class="l-ja">インフラ</span>
+        <span class="l-en">Performance</span><span class="l-zh">效能調校</span><span class="l-ja">性能改善</span>
       </div>
       <div class="vv">
-        <span class="l-en">AWS architecture and cost optimisation, CI/CD design; a self-built Proxmox VE environment running an RKE2 high-availability Kubernetes cluster</span>
-        <span class="l-zh">AWS 架構規劃與成本最佳化、CI/CD 建置與流程改善；自建 Proxmox VE 環境與 RKE2 高可用 Kubernetes 叢集</span>
-        <span class="l-ja">AWS のアーキテクチャ設計とコスト最適化、CI/CD の構築と改善、自前の Proxmox VE 環境上に RKE2 の高可用 Kubernetes クラスタを構築</span>
+        <span class="l-en">Profiling and tuning high-concurrency systems. Reworked the API and data-processing design of the player login flow, roughly tripling system RPS, then cut redundant queries and unnecessary network calls for a further 30–50% RPS gain on related APIs.</span>
+        <span class="l-zh">具備高併發系統效能分析與調校經驗，曾針對玩家登入流程進行 API 與資料處理架構優化，使系統 RPS 提升約 3 倍；另透過減少重複查詢與不必要網路請求，使相關 API RPS 再提升約 30–50%。</span>
+        <span class="l-ja">高負荷システムの性能分析・チューニングを経験。プレイヤーのログイン処理を API とデータ処理の両面から見直してシステム全体の RPS を約3倍に引き上げ、さらに重複クエリや不要な通信を削減して関連 API の RPS を約30〜50%改善。</span>
+      </div>
+    </div>
+    <div class="kv">
+      <div class="kk">
+        <span class="l-en">Cloud &amp; ops</span><span class="l-zh">雲端 / 維運</span><span class="l-ja">クラウド・運用</span>
+      </div>
+      <div class="vv">
+        <span class="l-en">Deploying and running services on AWS and GCP with Docker, CI/CD, Redis, Nginx and GitLab / GitHub Actions. I use AI coding tools such as Codex and Claude for development, code review and debugging.</span>
+        <span class="l-zh">具備 AWS、GCP 雲端部署與維運經驗，熟悉 Docker、CI/CD、Redis、Nginx、GitLab/GitHub Actions，並持續使用 Codex、Claude 等 AI Coding Tools 輔助程式開發、Code Review、除錯與開發效率提升。</span>
+        <span class="l-ja">AWS・GCP 上でのデプロイ・運用を経験し、Docker、CI/CD、Redis、Nginx、GitLab / GitHub Actions を実務で使用。開発・コードレビュー・デバッグには Codex や Claude などの AI コーディングツールを日常的に活用。</span>
       </div>
     </div>
     <div class="kv">
@@ -263,9 +278,9 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
         <span class="l-en">Open source</span><span class="l-zh">開源貢獻</span><span class="l-ja">オープンソース</span>
       </div>
       <div class="vv">
-        <span class="l-en">Apache OpenDAL Committer — I implement the .NET binding, working across the Rust ↔ C# FFI / interop layer</span>
-        <span class="l-zh">Apache OpenDAL Committer——實作 .NET Binding，負責 Rust 與 C# 之間的 FFI／Interop</span>
-        <span class="l-ja">Apache OpenDAL Committer —— .NET バインディングを実装し、Rust と C# の FFI／Interop 層を担当</span>
+        <span class="l-en">Apache OpenDAL Committer. I help design and maintain the .NET binding, working hands-on across the Rust ↔ C# FFI / interop layer.</span>
+        <span class="l-zh">Apache OpenDAL Committer，參與 .NET Binding 設計與維護，具備 Rust 與 C# FFI / Interop 實務經驗。</span>
+        <span class="l-ja">Apache OpenDAL の Committer として .NET バインディングの設計・保守に参加。Rust と C# 間の FFI／Interop の実務経験あり。</span>
       </div>
     </div>
   </div>
@@ -288,43 +303,53 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
       <div class="job-when">2025.05 – 2026.06</div>
     </div>
     <div class="job-sum">
-      <span class="l-en">Gameplay UI and backend API integration for a live commercial title.</span>
-      <span class="l-zh">商業遊戲專案的 UI 實作與後端 API 串接。</span>
-      <span class="l-ja">商業タイトルのゲーム UI 実装とバックエンド API 連携。</span>
+      <span class="l-en">Development and maintenance on a commercial game, responsible for UI implementation and for designing, integrating and maintaining backend APIs.</span>
+      <span class="l-zh">參與商業遊戲專案開發與維護，負責 UI 實作與後端 API 設計、串接及維護。</span>
+      <span class="l-ja">商業タイトルの開発・運営に参加し、UI の実装と、バックエンド API の設計・繋ぎ込み・保守を担当。</span>
     </div>
     <ul class="pts">
       <li>
-        <span class="l-en"><b>Tripled login throughput (~3× RPS)</b> by profiling the login path and restructuring API call ordering and request batching to eliminate head-of-line blocking.</span>
-        <span class="l-zh"><b>登入吞吐提升約 3 倍（RPS）</b>——分析登入流程瓶頸與請求阻塞，重新設計 API 呼叫順序與批次處理，消除 head-of-line blocking。</span>
-        <span class="l-ja"><b>ログインのスループットを約3倍（RPS）に。</b>ログイン経路をプロファイリングし、API 呼び出し順序とリクエストのバッチ化を再設計して head-of-line blocking を解消。</span>
+        <span class="l-en"><b>Raised login throughput from 30–40 to 130–150 QPS</b> by redesigning the sign-up and login flow for high concurrency: each game world's player slots are pre-allocated to server instances through Redis, so instances no longer contend for DB row locks to claim them, and player writes are queued and committed in batches.</span>
+        <span class="l-zh">重構高併發註冊／登入流程，以 Redis 將分流名額預先配額至各伺服器實例，消除多實例搶分流的 DB 行鎖競爭，並將玩家寫入改為佇列批次處理，<b>登入 QPS 由 30–40 提升至 130–150</b>。</span>
+        <span class="l-ja"><b>ログイン処理のスループットを 30〜40 QPS から 130〜150 QPS へ向上。</b>アクセスが集中する登録・ログイン処理を再設計。ワールドごとの登録枠を Redis で各サーバーインスタンスに事前配分することで、インスタンス間の枠の奪い合いによる DB の行ロック競合を解消し、プレイヤーデータの書き込みもキューによるバッチ処理に変更。</span>
       </li>
       <li>
-        <span class="l-en"><b>Cut asset I/O operations by ~50%</b> with a custom Addressables pipeline that keeps bundles encrypted while allowing direct file reads after unpacking.</span>
-        <span class="l-zh"><b>資產 I/O 次數減少約 50%</b>——客製化 Addressables 流程，讓 bundle 維持加密且解包後可直接讀取檔案。</span>
-        <span class="l-ja"><b>アセットの I/O 回数を約50%削減。</b>Addressables のパイプラインをカスタムし、バンドルを暗号化したまま展開後は直接ファイル読み取りを可能に。</span>
+        <span class="l-en"><b>Increased RPS on the relevant APIs by ~30–50%</b> with a request-scoped aggregator for mission updates: multiple progress changes in one request are merged into a single calculation and write, eliminating redundant cache computation and DB updates.</span>
+        <span class="l-zh">設計 Request 層級的任務更新聚合機制，將單一請求內的多筆任務進度變更合併為一次計算與寫入，減少重複快取運算與 DB 更新，<b>相關 API RPS 提升約 30–50%</b>。</span>
+        <span class="l-ja"><b>関連 API の RPS を約30〜50%向上。</b>ミッション進捗の更新をリクエスト単位で集約する仕組みを設計し、1リクエスト内の複数の更新を1回の計算と書き込みにまとめ、キャッシュ演算と DB 更新の重複を削減。</span>
       </li>
       <li>
-        <span class="l-en"><b>Trimmed 80 MB from the main bundle</b> by extending ViewSystem, the company's open-source UI framework, to resolve asset-loading issues.</span>
-        <span class="l-zh"><b>主要包體縮減 80 MB</b>——擴充公司開源專案 ViewSystem，解決資源載入問題。</span>
-        <span class="l-ja"><b>メインバンドルを 80 MB 削減。</b>社のオープンソース UI フレームワーク ViewSystem を拡張し、アセット読み込みの問題を解消。</span>
+        <span class="l-en"><b>Cut memory usage by ~200 MB</b> to fix crashes on low-memory iOS devices: reworked bundle granularity, upgraded NaniNovel to use its low-memory mode, and deduplicated background textures into shared assets.</span>
+        <span class="l-zh">解決低記憶體 iOS 裝置閃退問題，調整 Bundle 切分粒度、升版 NaniNovel 啟用低記憶體模式、背景貼圖去重共用，<b>記憶體用量減少約 200MB</b>。</span>
+        <span class="l-ja"><b>メモリ使用量を約200MB削減し、メモリの少ない iOS 端末で発生していたクラッシュを解消。</b>Bundle の分割粒度の見直し、NaniNovel のバージョンアップによる低メモリモードの有効化、背景テクスチャの重複排除と共有化を実施。</span>
       </li>
       <li>
-        <span class="l-en"><b>Reduced GitLab Runner build times by ~70%</b> for server-side images using sparse-checkout.</span>
-        <span class="l-zh"><b>GitLab Runner 建置時間減少約 70%</b>——以 sparse-checkout 改善 server-side image 的建置流程。</span>
-        <span class="l-ja"><b>GitLab Runner のビルド時間を約70%短縮。</b>sparse-checkout によりサーバーサイドイメージのビルドを改善。</span>
+        <span class="l-en"><b>Enabled zero-copy video playback from encrypted bundles</b> by customising the Addressables bundle pipeline, so videos no longer need copying to device storage before playback — removing both the wait and the doubled storage footprint.</span>
+        <span class="l-zh">客製化 Addressables Bundle 機制，<b>實現加密 Bundle 內影片的零複製直接讀取</b>，省去播放前複製至裝置儲存的等待與雙倍空間占用。</span>
+        <span class="l-ja"><b>暗号化 Bundle 内の動画をゼロコピーで直接読み込み可能に。</b>Addressables の Bundle 機構をカスタマイズして再生前の端末ストレージへのコピーを不要にし、待ち時間とストレージの二重消費を解消。</span>
       </li>
       <li>
-        <span class="l-en">Fixed out-of-memory crashes on low-spec iOS devices, restoring playability across the long tail of supported hardware.</span>
-        <span class="l-zh">排除低記憶體 iOS 裝置的閃退問題，恢復低階機種的可玩性。</span>
-        <span class="l-ja">低スペック iOS 端末のメモリ不足によるクラッシュを解消し、下位機種でのプレイ可能性を回復。</span>
+        <span class="l-en">Rebuilt the in-house art tool and streamlined art asset production, <b>improving art team efficiency by ~30%</b>.</span>
+        <span class="l-zh">重構美術個人化工具，優化美術元件產出流程，<b>美術作業效率提升約 30%</b>。</span>
+        <span class="l-ja"><b>アートチームの作業効率を約30%向上。</b>アートツールを刷新し、素材制作のフローを効率化。</span>
       </li>
       <li>
-        <span class="l-en">Rebuilt internal art tooling, raising art pipeline throughput by over 30%; partnered with the client's SRE team on cloud deployment, monitoring and observability.</span>
-        <span class="l-zh">重構美術個人化工具，作業效率提升 30% 以上；與業主 SRE 團隊協作完成雲端部署、監控與效能觀測。</span>
-        <span class="l-ja">アート向け内製ツールを作り直し、作業効率を30%以上向上。クライアントの SRE チームと協働し、クラウド展開・監視・可観測性を担当。</span>
+        <span class="l-en"><b>Cut the base package by ~80 MB</b> to fit within the platform's APK size limit, by adding Addressables support to <a href="https://github.com/MacacaGames/MacacaViewSystem">ViewSystem</a> (the company's open-source UI framework) and moving UI assets out of the base install into on-demand bundles.</span>
+        <span class="l-zh">擴充公司開源框架 <a href="https://github.com/MacacaGames/MacacaViewSystem">ViewSystem</a> 支援 Addressables，將 UI 資源自安裝包移至隨選載入的 Bundle，<b>主包體縮減約 80MB</b>，符合平台 APK 大小限制。</span>
+        <span class="l-ja"><b>アプリ本体のサイズを約80MB削減し、プラットフォームの APK サイズ制限をクリア。</b>自社のオープンソース UI フレームワーク <a href="https://github.com/MacacaGames/MacacaViewSystem">ViewSystem</a> を Addressables に対応させ、UI リソースをインストールパッケージからオンデマンド読み込みの Bundle へ移行。</span>
+      </li>
+      <li>
+        <span class="l-en"><b>Cut build-to-deploy time by ~70%</b> by optimising the server build and deployment pipeline.</span>
+        <span class="l-zh">優化 Server Build / Deployment Pipeline，<b>編譯至部署時間縮短約 70%</b>。</span>
+        <span class="l-ja"><b>サーバーのビルドからデプロイまでの所要時間を約70%短縮。</b>ビルド・デプロイパイプラインを最適化。</span>
+      </li>
+      <li>
+        <span class="l-en">Used AI coding tools such as Codex and Claude for development, debugging and improving code quality.</span>
+        <span class="l-zh">運用 Codex、Claude 等 AI Coding Tools 輔助開發、除錯與程式碼品質改善。</span>
+        <span class="l-ja">Codex や Claude などの AI コーディングツールを、開発・デバッグ・コード品質の改善に活用。</span>
       </li>
     </ul>
-    <div class="stack">C# (Unity) · PostgreSQL · Redis · GCP · GitLab · Codex · Claude</div>
+    <div class="stack">Unity · C# · .NET 10 · Entity Framework Core · MessagePack · MagicOnion · PostgreSQL · Redis · GCP · GitLab · Codex · Claude</div>
   </div>
 
   <div class="job">
@@ -337,33 +362,58 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
       <div class="job-when">2022.10 – 2025.02</div>
     </div>
     <div class="job-sum">
-      <span class="l-en">Sole backend owner for <b>ArcadeGalaxy</b> — architecture, deployment and operations. Delivered 10 game systems from producer and designer specs.</span>
-      <span class="l-zh"><b>ArcadeGalaxy</b> 的唯一後端負責人——架構、部署與維運；依企劃與製作人需求交付 10 項遊戲系統。</span>
-      <span class="l-ja"><b>ArcadeGalaxy</b> のバックエンドを一人で担当——設計・デプロイ・運用。企画とプロデューサーの仕様から10のゲームシステムを実装。</span>
+      <span class="l-en">Sole backend engineer on <a href="https://store.steampowered.com/app/3090620/Arcade_Galaxy/"><b>ArcadeGalaxy</b></a>, owning the game servers end to end — build, deployment and operations. Built and refined 10 game systems based on requirements from game designers and producers, spanning gameplay, Web3 features and community data APIs.</span>
+      <span class="l-zh">遊戲 <a href="https://store.steampowered.com/app/3090620/Arcade_Galaxy/"><b>ArcadeGalaxy</b></a> 的唯一後端工程師（Backend Owner），負責遊戲伺服器的建置、部署與維運，依企劃與製作人需求建置並優化 10 項遊戲系統，範圍涵蓋遊戲玩法、Web3 功能與社群資料 API。</span>
+      <span class="l-ja">ゲーム「<a href="https://store.steampowered.com/app/3090620/Arcade_Galaxy/"><b>ArcadeGalaxy</b></a>」のバックエンドを1名体制で担当（Backend Owner）。ゲームサーバーの構築・デプロイ・運用を一手に担い、企画とプロデューサーの要件をもとに、ゲームプレイ、Web3 機能、コミュニティ向けデータ API にわたる10のゲームシステムを構築・改善。</span>
     </div>
     <ul class="pts">
       <li>
-        <span class="l-en"><b>Reduced AWS operating costs by 75%</b> through iterative architecture optimisation, while owning the CI/CD pipeline and cloud buildout end to end.</span>
-        <span class="l-zh"><b>AWS 維運費用降低 75%</b>——持續進行架構最佳化，並獨立完成伺服器 CI/CD 架構與 AWS 雲端服務建置。</span>
-        <span class="l-ja"><b>AWS の運用コストを75%削減。</b>継続的なアーキテクチャ最適化に加え、CI/CD とクラウド構築を単独で担当。</span>
+        <span class="l-en">Built the AWS infrastructure and CI/CD pipeline from scratch, independently evaluating options and selecting services (EC2, Elastic Beanstalk, RDS, ElastiCache, S3, VPC, IAM), then continuously optimised the architecture to <b>cut operating costs by ~75%</b>.</span>
+        <span class="l-zh">從零建置 AWS 雲端架構與 CI/CD 流程，獨立完成方案評估與技術選型（EC2、Elastic Beanstalk、RDS、ElastiCache、S3、VPC、IAM），並持續進行架構最佳化，<b>維運費用降低約 75%</b>。</span>
+        <span class="l-ja">AWS のクラウド基盤と CI/CD パイプラインをゼロから構築。方式検討と技術選定（EC2、Elastic Beanstalk、RDS、ElastiCache、S3、VPC、IAM）を単独で行い、継続的なアーキテクチャ改善で<b>運用コストを約75%削減</b>。</span>
       </li>
       <li>
-        <span class="l-en"><b>Built a custom OIDC identity provider</b> with OpenIddict, unblocking players in regions where Firebase is unavailable.</span>
-        <span class="l-zh"><b>自建 OIDC 身分驗證系統</b>——以 OpenIddict 實作，解決不支援 Firebase 地區的玩家無法登入的問題。</span>
-        <span class="l-ja"><b>OIDC 認証基盤を自作。</b>OpenIddict で実装し、Firebase が利用できない地域のプレイヤーのログインを可能に。</span>
+        <span class="l-en">Developed the game server with ASP.NET Core, PostgreSQL and Redis, backed by <b>152 integration tests</b>.</span>
+        <span class="l-zh">以 ASP.NET Core、PostgreSQL 與 Redis 開發遊戲伺服器，並撰寫 <b>152 個整合測試</b>。</span>
+        <span class="l-ja">ASP.NET Core、PostgreSQL、Redis でゲームサーバーを開発し、<b>152件の結合テスト</b>を整備。</span>
       </li>
       <li>
-        <span class="l-en"><b>Integrated Steam payments</b>, processing live transactions and streamlining the checkout flow.</span>
-        <span class="l-zh"><b>Steam 金流串接</b>——處理實際交易並提升付款流程效率。</span>
-        <span class="l-ja"><b>Steam 決済を統合。</b>実取引を処理し、購入フローを効率化。</span>
+        <span class="l-en"><b>Built a standalone OIDC identity provider</b> with OpenIddict so players in China, where Firebase sign-in isn't available, could log in, and added Steam login.</span>
+        <span class="l-zh">以 OpenIddict <b>自建獨立的 OIDC 身分驗證系統</b>，解決中國地區無法使用 Firebase 登入的問題，並支援 Steam 登入。</span>
+        <span class="l-ja">OpenIddict を用いて <b>OIDC 認証基盤を独自に構築</b>。中国で Firebase 認証が利用できない問題を解消し、Steam ログインにも対応。</span>
       </li>
       <li>
-        <span class="l-en"><b>Authored and deployed 3 smart contracts</b>, moving game data on-chain for verifiability, with writes routed through an SQS consumer so chain latency stayed off the request path.</span>
-        <span class="l-zh"><b>撰寫並部署 3 個智能合約</b>，將遊戲資料上鏈以提升可驗證性；上鏈寫入透過 SQS consumer 送出，讓區塊鏈延遲不影響請求路徑。</span>
-        <span class="l-ja"><b>スマートコントラクトを3件開発・デプロイ。</b>ゲームデータをオンチェーン化して検証可能にし、書き込みは SQS consumer 経由にすることでチェーンの遅延をリクエスト経路から切り離しました。</span>
+        <span class="l-en"><b>Integrated Steam payments</b>, implementing the server-side flow for initiating, verifying and finalising transactions.</span>
+        <span class="l-zh"><b>串接 Steam 金流</b>，實作伺服器端的交易建立、驗證與完成流程。</span>
+        <span class="l-ja"><b>Steam 決済を組み込み</b>、サーバー側で取引の作成・検証・確定までの処理を実装。</span>
+      </li>
+      <li>
+        <span class="l-en">Built user-generated map (UGC) and leaderboard systems, <b>validating match results server-side</b> to prevent cheating.</span>
+        <span class="l-zh">建置玩家自製地圖（UGC）與排行榜系統，並<b>在伺服器端驗證比賽結果</b>以防止作弊。</span>
+        <span class="l-ja">ユーザー作成マップ（UGC）とランキング機能を構築し、不正防止のため<b>対戦結果をサーバー側で検証</b>。</span>
+      </li>
+      <li>
+        <span class="l-en">Developed the community data APIs behind the Creator Center website — map favourites, follows and stats charts.</span>
+        <span class="l-zh">開發創作者中心網站的社群資料 API，提供地圖收藏、追蹤與數據圖表等功能。</span>
+        <span class="l-ja">クリエイターセンター（Web サイト）向けのコミュニティデータ API を開発し、マップのお気に入り、フォロー、統計グラフなどを提供。</span>
+      </li>
+      <li>
+        <span class="l-en">Implemented friends, in-game mail, achievements, daily login rewards and redeem codes, plus <b>hot-reloadable game data</b> so designers can tweak values without a redeploy.</span>
+        <span class="l-zh">實作好友、信件、成就、每日登入與兌換碼等系統，並建立<b>企劃資料熱更新機制</b>，調整數值不需重新部署。</span>
+        <span class="l-ja">フレンド、メール、実績、ログインボーナス、シリアルコードなどを実装。<b>マスターデータのホットリロード</b>の仕組みも整え、再デプロイなしでパラメータを調整可能に。</span>
+      </li>
+      <li>
+        <span class="l-en"><b>Split blockchain features into a standalone Rust service</b> for wallet linking, NFT minting and cross-chain transfers, with on-chain transactions processed asynchronously through AWS SQS.</span>
+        <span class="l-zh">將區塊鏈功能<b>拆分為獨立的 Rust 服務</b>，實作錢包綁定、NFT 鑄造與跨鏈轉移，並透過 AWS SQS 非同步處理鏈上交易。</span>
+        <span class="l-ja">ブロックチェーン機能を<b>独立した Rust サービスとして分離</b>し、ウォレット連携、NFT ミント、クロスチェーン転送を実装。オンチェーン取引は AWS SQS で非同期処理。</span>
+      </li>
+      <li>
+        <span class="l-en"><b>Wrote and deployed 3 upgradeable (UUPS) smart contracts</b> in Solidity with Foundry and OpenZeppelin, putting players' racing history on-chain as publicly verifiable match records.</span>
+        <span class="l-zh">以 Solidity（Foundry、OpenZeppelin）<b>撰寫並部署 3 個可升級（UUPS）智能合約</b>，將玩家賽車歷史紀錄上鏈，提供可公開驗證的比賽紀錄。</span>
+        <span class="l-ja">Solidity（Foundry、OpenZeppelin）で<b>アップグレード可能（UUPS）なスマートコントラクトを3件開発・デプロイ</b>。プレイヤーのレース履歴をオンチェーンに記録し、誰でも検証できる対戦記録として公開。</span>
       </li>
     </ul>
-    <div class="stack">C# (Unity) · PostgreSQL · Redis · Nginx · Firebase · GitLab · Docker · Solidity · AWS (EC2, Elastic Beanstalk, ElastiCache, IAM, RDS, S3, Secrets Manager, VPC)</div>
+    <div class="stack">.NET 8 · Unity · PostgreSQL · Entity Framework Core · Redis · Nginx · Firebase · GitLab · Docker · Rust · Solidity · AWS (EC2, Elastic Beanstalk, ElastiCache, IAM, RDS, S3, SQS, Secrets Manager, VPC)</div>
   </div>
 
   <div class="job">
@@ -376,59 +426,64 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
       <div class="job-when">2021.10 – 2022.07</div>
     </div>
     <div class="job-sum">
-      <span class="l-en">Development and operation of blockchain-based financial products in Solidity.</span>
-      <span class="l-zh">以 Solidity 及智能合約實現區塊鏈金融產品的開發與維運。</span>
-      <span class="l-ja">Solidity とスマートコントラクトによるブロックチェーン金融プロダクトの開発・運用。</span>
+      <span class="l-en">Built and operated blockchain-based financial products on Solidity smart contracts, streamlining transaction flows and improving system performance.</span>
+      <span class="l-zh">負責以 Solidity 及智能合約實現區塊鏈金融產品的開發與維運，成功優化交易流程並提升系統效能。</span>
+      <span class="l-ja">Solidity とスマートコントラクトによるブロックチェーン金融プロダクトの開発・運用を担当し、取引フローの最適化とシステム性能の向上を実現。</span>
     </div>
     <ul class="pts">
       <li>
         <span class="l-en"><b>Developed, tested and deployed 5 smart contracts</b>, all shipped on schedule.</span>
-        <span class="l-zh"><b>完成 5 個智能合約的開發、測試與部署</b>，全數如期上線。</span>
-        <span class="l-ja"><b>スマートコントラクト5件を開発・テスト・デプロイ</b>し、すべて予定どおりリリース。</span>
+        <span class="l-zh">負責區塊鏈程式的開發、測試與佈署，<b>成功完成 5 個智能合約佈署</b>並確保程式按時上線。</span>
+        <span class="l-ja">ブロックチェーン関連の開発・テスト・デプロイを担当し、<b>スマートコントラクト5件をすべてスケジュールどおりにリリース</b>。</span>
       </li>
       <li>
-        <span class="l-en">Optimised the back-office admin flow, cutting processing time by roughly 50%.</span>
-        <span class="l-zh">優化網站後台管理流程，處理時間縮短約 50%。</span>
-        <span class="l-ja">管理画面の業務フローを最適化し、処理時間を約50%短縮。</span>
+        <span class="l-en">Ran back-office operations for the website, <b>improving processing efficiency by ~50%</b>.</span>
+        <span class="l-zh">負責網站後台的管理與操作，提升系統效率並<b>達成 50% 處理流程優化</b>。</span>
+        <span class="l-ja">Web サイトの管理画面の運用を担当し、<b>業務フローを見直して処理効率を約50%改善</b>。</span>
       </li>
       <li>
-        <span class="l-en">Led technical coordination across departments, translating support and user requirements into system changes.</span>
-        <span class="l-zh">主導跨部門技術合作，將客服與使用者端的需求轉化為實際的系統調整。</span>
-        <span class="l-ja">部門横断の技術調整を主導し、サポートやユーザー側の要望をシステム改修に落とし込み。</span>
+        <span class="l-en">Led technical collaboration across teams, coordinating requirements between customer support and users.</span>
+        <span class="l-zh">主導與跨部門團隊的技術合作，協調系統客服與使用者間的需求溝通。</span>
+        <span class="l-ja">部門横断の技術連携を主導し、カスタマーサポートとユーザー間の要件調整を担当。</span>
       </li>
     </ul>
-    <div class="stack">Solidity · Truffle · Ganache · Golang</div>
+    <div class="stack">Solidity · Truffle · Ganache · JavaScript</div>
   </div>
 
   <div class="job">
     <div class="job-head">
       <div class="job-title">
-        <span class="l-en">Game Engineer <span class="co">· Wanin International</span></span>
-        <span class="l-zh">遊戲工程師 <span class="co">· 網銀國際台北分公司</span></span>
-        <span class="l-ja">ゲームエンジニア <span class="co">· Wanin International</span></span>
+        <span class="l-en">Software Engineer <span class="co">· Wanin International</span></span>
+        <span class="l-zh">軟體工程師 <span class="co">· 網銀國際台北分公司</span></span>
+        <span class="l-ja">ソフトウェアエンジニア <span class="co">· Wanin International</span></span>
       </div>
       <div class="job-when">2020.11 – 2021.08</div>
     </div>
     <div class="job-sum">
-      <span class="l-en">Server-side systems, client integration and web tooling for non-core game features.</span>
-      <span class="l-zh">遊戲核心外相關系統的伺服器端開發、客戶端 UI 串接與網頁工具撰寫。</span>
-      <span class="l-ja">コア以外のゲーム機能について、サーバーサイド開発・クライアント連携・Web ツール作成を担当。</span>
+      <span class="l-en">Server-side development, client UI integration and web tooling for systems outside core gameplay, including:</span>
+      <span class="l-zh">負責遊戲核心外相關系統的伺服器端開發、客戶端 UI 串接與網頁工具撰寫，包含以下系統：</span>
+      <span class="l-ja">アウトゲーム系システムのサーバーサイド開発、クライアント UI との繋ぎ込み、Web ツールの作成を担当。主な担当システム：</span>
     </div>
     <ul class="pts">
       <li>
-        <span class="l-en">Shipped <b>friends, party and matchmaking systems</b>, including automatic opponent pairing.</span>
-        <span class="l-zh">開發<b>好友、組隊與配對系統</b>，實現自動配對適合對手的機制。</span>
-        <span class="l-ja"><b>フレンド・パーティー・マッチメイキング</b>を実装し、対戦相手の自動マッチングを実現。</span>
+        <span class="l-en"><b>Friends</b>: adding and managing friends, making play more social.</span>
+        <span class="l-zh"><b>好友系統</b>：提供玩家添加、管理好友功能，提升互動體驗。</span>
+        <span class="l-ja"><b>フレンド</b>：フレンドの追加・管理機能を提供し、プレイヤー同士の交流を促進。</span>
       </li>
       <li>
-        <span class="l-en">Built a server-side player telemetry system, plus a web query tool used daily by the design team.</span>
-        <span class="l-zh">建置玩家操作記錄系統，並開發供企劃日常使用的網頁查詢工具。</span>
-        <span class="l-ja">プレイヤー行動のテレメトリ基盤と、企画チームが日常的に使う Web 検索ツールを構築。</span>
+        <span class="l-en"><b>Parties and matchmaking</b>: forming parties and automatically pairing players with suitable opponents, boosting engagement.</span>
+        <span class="l-zh"><b>組隊與配對系統</b>：協助玩家組成隊伍並自動配對適合對手，提高遊戲參與度。</span>
+        <span class="l-ja"><b>パーティー・マッチング</b>：パーティー編成と適切な対戦相手の自動マッチングにより、エンゲージメントを向上。</span>
       </li>
       <li>
-        <span class="l-en">Implemented Redis-backed global announcements, score caching and real-time leaderboards.</span>
-        <span class="l-zh">以 Redis 實作全服公告推播、玩家積分快取與即時排名。</span>
-        <span class="l-ja">Redis を用いた全体アナウンス配信、スコアキャッシュ、リアルタイムランキングを実装。</span>
+        <span class="l-en"><b>Activity logging</b>: capturing player actions on the server, plus a web query tool for the design team.</span>
+        <span class="l-zh"><b>紀錄系統</b>：收集玩家操作記錄至伺服器，並開發網頁查詢工具供企劃使用。</span>
+        <span class="l-ja"><b>行動ログ</b>：プレイヤーの操作ログをサーバーに収集し、企画向けに Web ベースのログ検索ツールを開発。</span>
+      </li>
+      <li>
+        <span class="l-en"><b>Announcements, scores and rankings</b>: server-wide announcements, player score caching and real-time score-based rankings, built with Redis among other technologies.</span>
+        <span class="l-zh"><b>公告、積分與排名系統</b>：透過 Redis 等技術，實現全服公告推播，玩家積分快取與依據積分的即時排名。</span>
+        <span class="l-ja"><b>お知らせ・スコア・ランキング</b>：Redis などを用いて、全体お知らせの配信、スコアのキャッシュ、スコアに基づくリアルタイムランキングを実現。</span>
       </li>
     </ul>
     <div class="stack">C# · Unity · PostgreSQL · Redis · Linux · Docker · TypeScript (Angular) · Perforce</div>
@@ -437,30 +492,35 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
   <div class="job">
     <div class="job-head">
       <div class="job-title">
-        <span class="l-en">QA Engineer <span class="co">· Wanin International</span></span>
-        <span class="l-zh">測試工程師 <span class="co">· 網銀國際台北分公司</span></span>
-        <span class="l-ja">QA エンジニア <span class="co">· Wanin International</span></span>
+        <span class="l-en">QA Tester <span class="co">· Wanin International</span></span>
+        <span class="l-zh">測試人員 <span class="co">· 網銀國際台北分公司</span></span>
+        <span class="l-ja">QA テスター <span class="co">· Wanin International</span></span>
       </div>
       <div class="job-when">2018.05 – 2020.10</div>
     </div>
     <div class="job-sum">
-      <span class="l-en">Lead QA for a live-service title.</span>
-      <span class="l-zh">營運中遊戲專案的主 QA。</span>
-      <span class="l-ja">運営中タイトルのリード QA。</span>
+      <span class="l-en">Lead QA on one of the company's game titles.</span>
+      <span class="l-zh">負責遊戲《聖域對決》的主 QA。</span>
+      <span class="l-ja">ゲームタイトルのメイン QA を担当。</span>
     </div>
     <ul class="pts">
       <li>
-        <span class="l-en">Owned test planning and assignment for the QA team.</span>
-        <span class="l-zh">制定測試計畫並分配團隊人力執行。</span>
-        <span class="l-ja">テスト計画の策定とチームへの割り当てを担当。</span>
+        <span class="l-en">Drew up test plans and assigned testers to carry them out.</span>
+        <span class="l-zh">負責制定與分配人員進行測試計畫。</span>
+        <span class="l-ja">テスト計画の策定とテスターのアサインを担当。</span>
       </li>
       <li>
-        <span class="l-en">Specialised in reproducing hard-to-trigger defects and turning the reproduction steps into reusable regression cases.</span>
-        <span class="l-zh">專注於難以觸發之缺陷的重現，並將測試方法整理為可重複使用的回歸案例。</span>
-        <span class="l-ja">再現の難しい不具合の再現手順を特定し、再利用可能なリグレッションケースとして整備。</span>
+        <span class="l-en">Reproduced a wide range of in-game bugs as reliably as possible.</span>
+        <span class="l-zh">將遊戲內的各種 BUG 盡可能地重現。</span>
+        <span class="l-ja">ゲーム内の各種不具合について、可能な限り再現を確認。</span>
+      </li>
+      <li>
+        <span class="l-en">Organised black-box, usability and functional testing into written records.</span>
+        <span class="l-zh">將各種方法的測試整理並寫成記錄。</span>
+        <span class="l-ja">ブラックボックス・ユーザビリティ・機能テストなど、各手法のテストを整理して記録。</span>
       </li>
     </ul>
-    <div class="stack">C# · Unity · PostgreSQL · Redis · Perforce</div>
+    <div class="stack">C# · Unity · PostgreSQL · Redis</div>
   </div>
 </div></section>
 
@@ -473,8 +533,8 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
   <div class="edu-row">
     <div class="edu-name">
       <span class="l-en">St. John's University, Taiwan — B.S., Electrical Engineering</span>
-      <span class="l-zh">聖約翰科技大學 — 電機工程學系</span>
-      <span class="l-ja">聖約翰科技大学（台湾） — 電気工学科 学士</span>
+      <span class="l-zh">聖約翰科技大學 — 電機工程系</span>
+      <span class="l-ja">聖約翰科技大学（台湾） 電気工学科 卒業</span>
     </div>
     <div class="job-when">2011 – 2015</div>
   </div>
@@ -487,27 +547,51 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 44px; }
     <span class="l-ja">スキル</span>
   </h2>
   <div class="kv">
-    <div class="kk"><span class="l-en">Languages</span><span class="l-zh">程式語言</span><span class="l-ja">言語</span></div>
-    <div class="vv">C# (.NET) · Rust · TypeScript · Solidity · Golang</div>
+    <div class="kk"><span class="l-en">Languages</span><span class="l-zh">程式語言</span><span class="l-ja">開発言語</span></div>
+    <div class="vv">C# (.NET) · JavaScript · Rust · Go · HTML · CSS</div>
   </div>
   <div class="kv">
-    <div class="kk"><span class="l-en">Data</span><span class="l-zh">資料</span><span class="l-ja">データ</span></div>
-    <div class="vv">PostgreSQL · MySQL · Redis</div>
+    <div class="kk"><span class="l-en">Databases</span><span class="l-zh">資料庫</span><span class="l-ja">データベース</span></div>
+    <div class="vv">PostgreSQL · Redis</div>
   </div>
   <div class="kv">
     <div class="kk"><span class="l-en">Cloud</span><span class="l-zh">雲端</span><span class="l-ja">クラウド</span></div>
-    <div class="vv">AWS · GCP · Docker · Kubernetes (RKE2) · Proxmox VE</div>
+    <div class="vv">AWS · GCP</div>
   </div>
   <div class="kv">
-    <div class="kk"><span class="l-en">Tooling</span><span class="l-zh">工具</span><span class="l-ja">ツール</span></div>
-    <div class="vv">Git · GitHub Actions · GitLab CI/CD · Nginx · Linux · Claude · Codex</div>
+    <div class="kk"><span class="l-en">Infra</span><span class="l-zh">容器 / 部署</span><span class="l-ja">インフラ</span></div>
+    <div class="vv">Docker (Podman) · Docker Compose · MicroK8s · Kubernetes (RKE2) · Nginx</div>
+  </div>
+  <div class="kv">
+    <div class="kk"><span class="l-en">Protocols</span><span class="l-zh">通訊協定</span><span class="l-ja">プロトコル</span></div>
+    <div class="vv">MessagePack · SignalR (WebSocket) · gRPC (Protocol Buffers)</div>
+  </div>
+  <div class="kv">
+    <div class="kk"><span class="l-en">Git &amp; CI/CD</span><span class="l-zh">Git / CI/CD</span><span class="l-ja">Git・CI/CD</span></div>
+    <div class="vv">GitHub · GitLab · GitHub Actions · GitLab Runner</div>
+  </div>
+  <div class="kv">
+    <div class="kk"><span class="l-en">Game engines</span><span class="l-zh">遊戲引擎</span><span class="l-ja">ゲームエンジン</span></div>
+    <div class="vv">Unity · Godot</div>
+  </div>
+  <div class="kv">
+    <div class="kk"><span class="l-en">SDKs</span><span class="l-zh">框架 / SDK</span><span class="l-ja">SDK</span></div>
+    <div class="vv">Steamworks SDK · Firebase</div>
+  </div>
+  <div class="kv">
+    <div class="kk"><span class="l-en">OS</span><span class="l-zh">作業系統</span><span class="l-ja">OS</span></div>
+    <div class="vv">Windows · macOS · Linux</div>
+  </div>
+  <div class="kv">
+    <div class="kk"><span class="l-en">AI tools</span><span class="l-zh">AI 工具</span><span class="l-ja">AI ツール</span></div>
+    <div class="vv">Claude · Codex</div>
   </div>
   <div class="kv">
     <div class="kk"><span class="l-en">Spoken</span><span class="l-zh">語言能力</span><span class="l-ja">語学</span></div>
     <div class="vv">
-      <span class="l-en">Chinese (native) · Japanese (JLPT N1) · English (intermediate)</span>
-      <span class="l-zh">中文（母語）· 日文（JLPT N1）· 英文（中階）</span>
-      <span class="l-ja">中国語（母語）· 日本語（JLPT N1）· 英語（中級）</span>
+      <span class="l-en">Mandarin Chinese (native) · Japanese (JLPT N1, 2017) · English (intermediate)</span>
+      <span class="l-zh">中文（母語）· 日文（JLPT N1，2017）· 英文（中等）</span>
+      <span class="l-ja">中国語（母語）· 日本語（JLPT N1、2017年取得）· 英語（中級）</span>
     </div>
   </div>
 </div></section>
